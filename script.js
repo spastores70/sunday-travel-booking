@@ -3,6 +3,28 @@
 // Found at: travelpayouts.com → Account → Marker
 var TP_MARKER = 'YOUR_MARKER';
 
+// ── Mobile nav ───────────────────────────────────────────────────────────────
+function toggleMenu() {
+  var menu = document.querySelector('.menu');
+  var btn = document.getElementById('hamburger');
+  var isOpen = menu.classList.toggle('open');
+  btn.innerHTML = isOpen ? '&#10005;' : '&#9776;';
+  btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.menu a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var menu = document.querySelector('.menu');
+      var btn = document.getElementById('hamburger');
+      if (menu && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        if (btn) { btn.innerHTML = '&#9776;'; }
+      }
+    });
+  });
+});
+
 // ── Login modal ───────────────────────────────────────────────────────────────
 function openModal() {
   document.getElementById('loginModal').style.display = 'flex';
