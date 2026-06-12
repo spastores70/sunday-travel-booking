@@ -62,7 +62,11 @@ function setSearchTab(type) {
   }
 }
 
-// ── Hotel search → Hotellook ──────────────────────────────────────────────────
+// ── Hotel search → Booking.com ───────────────────────────────────────────────
+// Booking.com is globally accessible. For affiliate tracking, add your
+// Booking.com AID from Travelpayouts (Tools → Programs → Booking.com).
+var BOOKING_AID = 'YOUR_BOOKING_AID'; // replace with your Booking.com AID
+
 function searchHotels() {
   var dest = document.getElementById('hotelDest').value.trim();
   var checkIn = document.getElementById('checkIn').value;
@@ -74,15 +78,12 @@ function searchHotels() {
     return;
   }
 
-  var params = new URLSearchParams({
-    destination: dest,
-    adults: guests,
-    checkIn: checkIn || '',
-    checkOut: checkOut || '',
-    marker: TP_MARKER
-  });
+  var params = new URLSearchParams({ ss: dest, group_adults: guests });
+  if (checkIn)  params.set('checkin', checkIn);
+  if (checkOut) params.set('checkout', checkOut);
+  if (BOOKING_AID !== 'YOUR_BOOKING_AID') params.set('aid', BOOKING_AID);
 
-  window.open('https://hotellook.com/hotels?' + params.toString(), '_blank');
+  window.open('https://www.booking.com/searchresults.html?' + params.toString(), '_blank');
 }
 
 // ── Flight search → Aviasales ─────────────────────────────────────────────────
