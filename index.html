@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunday Travel Deals</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="hero">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_30fps.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+
+  <nav>
+    <div class="logo">
+<img src="logo.png" alt="Sunday Travel Deals">
+</div>
+    <div class="menu">
+
+<a href="index.html">Home</a>
+
+<a href="hotels.html">Hotels</a>
+
+<a href="#deals">Deals</a>
+<a href="about.html">
+About
+</a>
+<a href="contact.html">Contact</a>
+
+<a href="flights.html">Flights</a>
+<a href="privacy.html">Privacy</a>
+
+
+<button onclick="openModal()">
+Login / Sign Up
+</button>
+
+</div>
+  </nav>
+
+  <div class="hero-content">
+    <h1>Explore The World For Less</h1>
+    <p>Search hotels, flights, and dream destinations in one beautiful place.</p>
+
+    <div class="search-tabs">
+      <button class="tab-btn active" id="tab-hotels" onclick="setSearchTab('hotels')">🏨 Hotels</button>
+      <button class="tab-btn" id="tab-flights" onclick="setSearchTab('flights')">✈️ Flights</button>
+    </div>
+
+    <div class="glass-search" id="hotelSearch">
+      <input type="text" id="hotelDest" placeholder="Where are you going?" />
+      <input type="date" id="checkIn" />
+      <input type="date" id="checkOut" />
+      <select id="guests">
+        <option value="1">1 Guest</option>
+        <option value="2">2 Guests</option>
+        <option value="3">3 Guests</option>
+        <option value="4">4 Guests</option>
+      </select>
+      <button onclick="searchHotels()">Search Hotels</button>
+    </div>
+
+    <div class="glass-search glass-search--flights" id="flightSearch">
+      <input type="text" id="flightFrom" placeholder="From (city or airport)" />
+      <input type="text" id="flightTo" placeholder="To (city or airport)" />
+      <input type="date" id="departDate" />
+      <select id="passengers">
+        <option value="1">1 Passenger</option>
+        <option value="2">2 Passengers</option>
+        <option value="3">3 Passengers</option>
+        <option value="4">4 Passengers</option>
+      </select>
+      <button onclick="searchFlights()">Search Flights</button>
+    </div>
+  </div>
+</header>
+
+<section id="deals" class="deals">
+  <h2>Hot Hotel Deals</h2>
+  <p class="deals-subtitle">Powered by <strong>Travelpayouts</strong> — we may earn a commission at no extra cost to you.</p>
+
+  <div class="carousel">
+    <button class="arrow" onclick="moveSlide(-1)">‹</button>
+
+    <div class="carousel-track" id="carouselTrack">
+      <a class="deal-card" href="https://hotellook.com/hotels?destination=Miami&adults=2&marker=YOUR_MARKER" target="_blank" rel="noopener sponsored">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Ocean View Resort Miami">
+        <h3>Ocean View Resort</h3>
+        <p>Miami, Florida</p>
+        <strong>From $129/night</strong>
+      </a>
+
+      <a class="deal-card" href="https://hotellook.com/hotels?destination=Dallas&adults=2&marker=YOUR_MARKER" target="_blank" rel="noopener sponsored">
+        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" alt="Luxury City Hotel Dallas">
+        <h3>Luxury City Hotel</h3>
+        <p>Dallas, Texas</p>
+        <strong>From $149/night</strong>
+      </a>
+
+      <a class="deal-card" href="https://hotellook.com/hotels?destination=Denver&adults=2&marker=YOUR_MARKER" target="_blank" rel="noopener sponsored">
+        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="Mountain Escape Denver">
+        <h3>Mountain Escape</h3>
+        <p>Denver, Colorado</p>
+        <strong>From $99/night</strong>
+      </a>
+
+      <a class="deal-card" href="https://hotellook.com/hotels?destination=Maldives&adults=2&marker=YOUR_MARKER" target="_blank" rel="noopener sponsored">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Island Paradise Maldives">
+        <h3>Island Paradise</h3>
+        <p>Maldives</p>
+        <strong>From $199/night</strong>
+      </a>
+    </div>
+
+    <button class="arrow" onclick="moveSlide(1)">›</button>
+  </div>
+</section>
+
+<div class="modal" id="loginModal">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()">×</button>
+    <h2>Welcome Back</h2>
+    <input type="email" placeholder="Email address">
+    <input type="password" placeholder="Password">
+    <button class="login-btn">Login</button>
+    <p>New here? <span>Create an account</span></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<footer class="site-footer">
+
+<div class="footer-top">
+
+<div class="footer-brand">
+
+<h2>
+✈️ Sunday Travel Deals
+</h2>
+
+<p>
+
+Discover hotel deals and unforgettable travel experiences.
+
+</p>
+
+</div>
+
+<div class="footer-links">
+
+<h3>
+Explore
+</h3>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="hotels.html">
+Hotels
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="privacy.html">
+Privacy
+</a>
+
+</div>
+
+<div class="footer-links">
+
+<h3>
+Support
+</h3>
+
+<a href="#">
+Help Center
+</a>
+
+<a href="#">
+FAQ
+</a>
+
+<a href="terms.html">Terms</a>
+
+</div>
+
+<div class="footer-links">
+
+<h3>
+Connect
+</h3>
+
+<a href="#">
+Facebook
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+<a href="#">
+YouTube
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 Sunday Travel Deals
+
+</div>
+
+</footer>
+</body>
+</html>
