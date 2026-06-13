@@ -247,16 +247,28 @@ function searchTours() {
 
 // ── Cruise search → CruiseDirect ─────────────────────────────────────────────
 function searchCruises() {
-  var dest     = document.getElementById('cruiseDest').value.trim();
-  var month    = document.getElementById('cruiseMonth').value;
-  var duration = document.getElementById('cruiseDuration').value;
+  var dest = (document.getElementById('cruiseDest').value || '').trim().toLowerCase();
 
-  var params = new URLSearchParams();
-  if (dest)     params.set('destination', dest);
-  if (month)    params.set('month', month);
-  if (duration) params.set('duration', duration);
+  var slugs = {
+    'caribbean':     'caribbean-cruises',
+    'bahamas':       'bahamas-cruises',
+    'mediterranean': 'mediterranean-cruises',
+    'alaska':        'alaska-cruises',
+    'europe':        'europe-cruises',
+    'bermuda':       'bermuda-cruises',
+    'mexico':        'mexico-cruises',
+    'hawaii':        'hawaii-cruises',
+    'canada':        'canada-new-england-cruises',
+    'miami':         'caribbean-cruises',
+    'florida':       'caribbean-cruises',
+  };
 
-  window.open('https://www.cruisedirect.com/results?' + params.toString(), '_blank');
+  var slug = null;
+  for (var key in slugs) {
+    if (dest.indexOf(key) !== -1) { slug = slugs[key]; break; }
+  }
+
+  window.open('https://www.cruisedirect.com/' + (slug || ''), '_blank');
 }
 
 // ── Contact form ──────────────────────────────────────────────────────────────
