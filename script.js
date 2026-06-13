@@ -23,15 +23,91 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  updateNavForUser();
 });
 
-// ── Login modal ───────────────────────────────────────────────────────────────
+// ── Login / Sign Up modal ────────────────────────────────────────────────────
 function openModal() {
+  switchModalTab('login');
   document.getElementById('loginModal').style.display = 'flex';
 }
 
 function closeModal() {
   document.getElementById('loginModal').style.display = 'none';
+}
+
+function switchModalTab(tab) {
+  var isLogin = tab === 'login';
+  document.getElementById('modal-login-form').style.display  = isLogin ? '' : 'none';
+  document.getElementById('modal-signup-form').style.display = isLogin ? 'none' : '';
+  document.getElementById('tab-login').classList.toggle('active', isLogin);
+  document.getElementById('tab-signup').classList.toggle('active', !isLogin);
+  document.getElementById('loginError')  && (document.getElementById('loginError').textContent  = '');
+  document.getElementById('signupError') && (document.getElementById('signupError').textContent = '');
+}
+
+function handleLogin() {
+  var email    = (document.getElementById('loginEmail').value    || '').trim();
+  var password =  document.getElementById('loginPassword').value || '';
+  var error    =  document.getElementById('loginError');
+
+  if (!email || !password) { error.textContent = 'Please enter your email and password.'; return; }
+
+  var users = JSON.parse(localStorage.getItem('std_users') || '{}');
+  if (!users[email]) { error.textContent = 'No account found. Please sign up first.'; return; }
+  if (users[email].pw !== btoa(password)) { error.textContent = 'Incorrect password.'; return; }
+
+  localStorage.setItem('std_session', JSON.stringify({ email: email, name: users[email].name }));
+  error.textContent = '';
+  closeModal();
+  updateNavForUser();
+}
+
+function handleSignup() {
+  var name     = (document.getElementById('signupName').value     || '').trim();
+  var email    = (document.getElementById('signupEmail').value    || '').trim();
+  var password =  document.getElementById('signupPassword').value || '';
+  var error    =  document.getElementById('signupError');
+
+  if (!name || !email || !password) { error.textContent = 'Please fill in all fields.'; return; }
+  if (password.length < 6)          { error.textContent = 'Password must be at least 6 characters.'; return; }
+  if (!/\S+@\S+\.\S+/.test(email))  { error.textContent = 'Please enter a valid email address.'; return; }
+
+  var users = JSON.parse(localStorage.getItem('std_users') || '{}');
+  if (users[email]) { error.textContent = 'An account with this email already exists.'; return; }
+
+  users[email] = { name: name, pw: btoa(password) };
+  localStorage.setItem('std_users', JSON.stringify(users));
+  localStorage.setItem('std_session', JSON.stringify({ email: email, name: name }));
+
+  error.textContent = '';
+  closeModal();
+  updateNavForUser();
+}
+
+function handleLogout() {
+  localStorage.removeItem('std_session');
+  updateNavForUser();
+}
+
+function updateNavForUser() {
+  var user    = JSON.parse(localStorage.getItem('std_session') || 'null');
+  var loginBtn = document.querySelector('.menu button[onclick="openModal()"]');
+  if (!loginBtn) return;
+  if (user) {
+    loginBtn.textContent = (user.name.split(' ')[0]) + ' ▾';
+    loginBtn.setAttribute('onclick', '');
+    loginBtn.addEventListener('click', function handler() {
+      if (confirm('Log out of Sunday Travel Deals?')) {
+        handleLogout();
+        loginBtn.removeEventListener('click', handler);
+      }
+    });
+  } else {
+    loginBtn.textContent = 'Login / Sign Up';
+    loginBtn.setAttribute('onclick', 'openModal()');
+  }
 }
 
 // ── Carousel ──────────────────────────────────────────────────────────────────

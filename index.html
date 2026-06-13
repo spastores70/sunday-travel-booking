@@ -139,15 +139,36 @@
   </div>
 </section>
 
-<!-- Login modal -->
+<!-- Login / Sign Up modal -->
 <div class="modal" id="loginModal">
   <div class="modal-box">
     <button type="button" class="close" onclick="closeModal()">&#215;</button>
-    <h2>Welcome Back</h2>
-    <input type="email"    placeholder="Email address">
-    <input type="password" placeholder="Password">
-    <button type="button" class="login-btn">Login</button>
-    <p>New here? <span>Create an account</span></p>
+
+    <div class="modal-tabs">
+      <button type="button" class="modal-tab active" id="tab-login"  onclick="switchModalTab('login')">Login</button>
+      <button type="button" class="modal-tab"        id="tab-signup" onclick="switchModalTab('signup')">Sign Up</button>
+    </div>
+
+    <!-- Login form -->
+    <div id="modal-login-form">
+      <h2>Welcome Back</h2>
+      <input type="email"    id="loginEmail"    placeholder="Email address" autocomplete="email">
+      <input type="password" id="loginPassword" placeholder="Password"      autocomplete="current-password">
+      <p class="modal-error" id="loginError"></p>
+      <button type="button" class="login-btn" onclick="handleLogin()">Login</button>
+      <p class="modal-switch">New here? <span onclick="switchModalTab('signup')">Create an account</span></p>
+    </div>
+
+    <!-- Sign Up form -->
+    <div id="modal-signup-form" class="modal-form-hidden">
+      <h2>Create Account</h2>
+      <input type="text"     id="signupName"     placeholder="Full name"            autocomplete="name">
+      <input type="email"    id="signupEmail"    placeholder="Email address"        autocomplete="email">
+      <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" autocomplete="new-password">
+      <p class="modal-error" id="signupError"></p>
+      <button type="button" class="login-btn" onclick="handleSignup()">Create Account</button>
+      <p class="modal-switch">Already have an account? <span onclick="switchModalTab('login')">Login</span></p>
+    </div>
   </div>
 </div>
 
