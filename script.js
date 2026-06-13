@@ -110,6 +110,42 @@ function searchFlights() {
   window.open('https://www.aviasales.com/search?' + params.toString(), '_blank');
 }
 
+// ── Car search → RentalCars / Discover Cars ───────────────────────────────────
+function searchCars() {
+  var pickup = document.getElementById('carPickup').value.trim();
+  var pickupDate = document.getElementById('carPickupDate').value;
+  var returnDate = document.getElementById('carReturnDate').value;
+
+  if (!pickup) { alert('Please enter a pickup location.'); return; }
+
+  var params = new URLSearchParams({ prefloc: pickup, pName: pickup });
+  if (pickupDate) params.set('pu', pickupDate);
+  if (returnDate) params.set('do', returnDate);
+
+  window.open('https://www.rentalcars.com/?' + params.toString(), '_blank');
+}
+
+// ── Tours search → Viator ─────────────────────────────────────────────────────
+function searchTours() {
+  var dest = document.getElementById('tourDest').value.trim();
+  if (!dest) { alert('Please enter a destination.'); return; }
+  window.open('https://www.viator.com/search/' + encodeURIComponent(dest), '_blank');
+}
+
+// ── Cruise search → CruiseDirect ─────────────────────────────────────────────
+function searchCruises() {
+  var dest     = document.getElementById('cruiseDest').value.trim();
+  var month    = document.getElementById('cruiseMonth').value;
+  var duration = document.getElementById('cruiseDuration').value;
+
+  var params = new URLSearchParams();
+  if (dest)     params.set('destination', dest);
+  if (month)    params.set('month', month);
+  if (duration) params.set('duration', duration);
+
+  window.open('https://www.cruisedirect.com/results?' + params.toString(), '_blank');
+}
+
 // ── Contact form ──────────────────────────────────────────────────────────────
 function sendMessage(event) {
   event.preventDefault();

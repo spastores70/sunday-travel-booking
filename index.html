@@ -21,75 +21,81 @@
 
   <nav>
     <div class="logo">
-<img src="logo.png" alt="Sunday Travel Deals">
-</div>
+      <img src="logo.png" alt="Sunday Travel Deals">
+    </div>
     <div class="menu">
-
-<a href="index.html">Home</a>
-<a href="flights.html">Flights</a>
-
-<a href="hotels.html">Hotels</a>
-
-<a href="#deals">Deals</a>
-<a href="about.html">
-About
-</a>
-<a href="contact.html">Contact</a>
-
-<a href="privacy.html">Privacy</a>
-
-
-<button onclick="openModal()">
-Login / Sign Up
-</button>
-
-</div>
+      <a href="index.html">Home</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="flights.html">Flights</a>
+      <a href="cars.html">Cars</a>
+      <a href="tours.html">Tours</a>
+      <a href="cruises.html">Cruises</a>
+      <a href="#deals">Deals</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <button type="button" onclick="openModal()">Login / Sign Up</button>
+    </div>
     <button type="button" class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
   </nav>
 
   <div class="hero-content">
     <h1>Explore The World For Less</h1>
-    <p>Search hotels, flights, and dream destinations in one beautiful place.</p>
+    <p>Search hotels, flights, cars, tours and more in one beautiful place.</p>
 
     <div class="search-tabs">
-      <button class="tab-btn active" id="tab-hotels" onclick="setSearchTab('hotels')">🏨 Hotels</button>
-      <button class="tab-btn" id="tab-flights" onclick="setSearchTab('flights')">✈️ Flights</button>
+      <button type="button" class="tab-btn active" id="tab-hotels" onclick="setSearchTab('hotels')">🏨 Hotels</button>
+      <button type="button" class="tab-btn" id="tab-flights" onclick="setSearchTab('flights')">✈️ Flights</button>
     </div>
 
     <div class="glass-search" id="hotelSearch">
-      <input type="text" id="hotelDest" placeholder="Where are you going?" />
-      <input type="date" id="checkIn" />
-      <input type="date" id="checkOut" />
-      <select id="guests">
+      <input type="text"  id="hotelDest"  placeholder="Where are you going?" />
+      <input type="date"  id="checkIn"    title="Check-in date" />
+      <input type="date"  id="checkOut"   title="Check-out date" />
+      <select id="guests" title="Number of guests">
         <option value="1">1 Guest</option>
         <option value="2">2 Guests</option>
         <option value="3">3 Guests</option>
         <option value="4">4 Guests</option>
       </select>
-      <button onclick="searchHotels()">Search Hotels</button>
+      <button type="button" onclick="searchHotels()">Search Hotels</button>
     </div>
 
     <div class="glass-search glass-search--flights" id="flightSearch">
-      <input type="text" id="flightFrom" placeholder="From (city or airport)" />
-      <input type="text" id="flightTo" placeholder="To (city or airport)" />
-      <input type="date" id="departDate" />
-      <select id="passengers">
+      <input type="text" id="flightFrom"  placeholder="From (city or airport)" />
+      <input type="text" id="flightTo"    placeholder="To (city or airport)" />
+      <input type="date" id="departDate"  title="Departure date" />
+      <select id="passengers" title="Number of passengers">
         <option value="1">1 Passenger</option>
         <option value="2">2 Passengers</option>
         <option value="3">3 Passengers</option>
         <option value="4">4 Passengers</option>
       </select>
-      <button onclick="searchFlights()">Search Flights</button>
+      <button type="button" onclick="searchFlights()">Search Flights</button>
     </div>
   </div>
 </header>
 
+<!-- Category tiles -->
+<section class="categories">
+  <h2>Browse by Category</h2>
+  <p class="categories-lead">Everything you need for the perfect trip — all in one place.</p>
+  <div class="category-grid">
+    <a class="category-tile tile-hotels"  href="hotels.html"><span>🏨</span>Hotels</a>
+    <a class="category-tile tile-flights" href="flights.html"><span>✈️</span>Flights</a>
+    <a class="category-tile tile-cars"    href="cars.html"><span>🚗</span>Cars &amp; Bikes</a>
+    <a class="category-tile tile-tours"   href="tours.html"><span>🎭</span>Tours &amp; Activities</a>
+    <a class="category-tile tile-cruises" href="cruises.html"><span>🚢</span>Cruises</a>
+  </div>
+</section>
+
+<!-- Hotel deal cards -->
 <section id="deals" class="deals">
   <h2>Hot Hotel Deals</h2>
-  <p class="deals-subtitle">Powered by <strong>Travelpayouts</strong> — we may earn a commission at no extra cost to you.</p>
+  <p class="deals-subtitle">Powered by <strong>Booking.com</strong> — we may earn a commission at no extra cost to you.</p>
 
   <div class="carousel">
-    <button class="arrow" onclick="moveSlide(-1)">‹</button>
+    <button type="button" class="arrow" onclick="moveSlide(-1)">&#8249;</button>
 
     <div class="carousel-track" id="carouselTrack">
       <a class="deal-card" href="https://www.booking.com/searchresults.html?ss=Miami" target="_blank" rel="noopener sponsored">
@@ -121,114 +127,58 @@ Login / Sign Up
       </a>
     </div>
 
-    <button class="arrow" onclick="moveSlide(1)">›</button>
+    <button type="button" class="arrow" onclick="moveSlide(1)">&#8250;</button>
   </div>
 </section>
 
+<!-- Login modal -->
 <div class="modal" id="loginModal">
   <div class="modal-box">
-    <button class="close" onclick="closeModal()">×</button>
+    <button type="button" class="close" onclick="closeModal()">&#215;</button>
     <h2>Welcome Back</h2>
-    <input type="email" placeholder="Email address">
+    <input type="email"    placeholder="Email address">
     <input type="password" placeholder="Password">
-    <button class="login-btn">Login</button>
+    <button type="button" class="login-btn">Login</button>
     <p>New here? <span>Create an account</span></p>
   </div>
 </div>
 
 <script src="script.js"></script>
+
 <footer class="site-footer">
-
-<div class="footer-top">
-
-<div class="footer-brand">
-
-<h2>
-✈️ Sunday Travel Deals
-</h2>
-
-<p>
-
-Discover hotel deals and unforgettable travel experiences.
-
-</p>
-
-</div>
-
-<div class="footer-links">
-
-<h3>
-Explore
-</h3>
-
-<a href="index.html">
-Home
-</a>
-
-<a href="hotels.html">
-Hotels
-</a>
-
-<a href="about.html">
-About
-</a>
-
-<a href="contact.html">
-Contact
-</a>
-
-<a href="privacy.html">
-Privacy
-</a>
-
-</div>
-
-<div class="footer-links">
-
-<h3>
-Support
-</h3>
-
-<a href="#">
-Help Center
-</a>
-
-<a href="#">
-FAQ
-</a>
-
-<a href="terms.html">Terms</a>
-
-</div>
-
-<div class="footer-links">
-
-<h3>
-Connect
-</h3>
-
-<a href="#">
-Facebook
-</a>
-
-<a href="#">
-Instagram
-</a>
-
-<a href="#">
-YouTube
-</a>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-© 2026 Sunday Travel Deals
-
-</div>
-
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h2>✈️ Sunday Travel Deals</h2>
+      <p>Discover hotel, flight, car, tour and cruise deals for every traveler.</p>
+      <p class="footer-affiliate-note">This site contains affiliate links. We may earn a commission when you book through our links at no extra cost to you.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Explore</h3>
+      <a href="index.html">Home</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="flights.html">Flights</a>
+      <a href="cars.html">Cars</a>
+      <a href="tours.html">Tours</a>
+      <a href="cruises.html">Cruises</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="footer-links">
+      <h3>Support</h3>
+      <a href="#">Help Center</a>
+      <a href="#">FAQ</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <div class="footer-links">
+      <h3>Connect</h3>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Sunday Travel Deals</div>
 </footer>
+
 </body>
 </html>

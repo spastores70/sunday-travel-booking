@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cruises | Sunday Travel Deals</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="cruises-hero">
+  <nav>
+    <div class="logo"><img src="logo.png" alt="Sunday Travel Deals"></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="flights.html">Flights</a>
+      <a href="cars.html">Cars</a>
+      <a href="tours.html">Tours</a>
+      <a href="cruises.html">Cruises</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <button type="button" class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
+  </nav>
+  <div class="cruises-hero-content">
+    <h1>Cruises</h1>
+    <p>Set sail to the world's most beautiful destinations.</p>
+  </div>
+</header>
+
+<section class="cruises-widget-section">
+  <div class="cruises-widget-box">
+
+    <!--
+      Cruise affiliate programs are not on Travelpayouts.
+      Recommended: sign up at cruisedirect.com/affiliates (Commission Junction)
+      Then add your affiliate link to the search button below.
+    -->
+    <h3>Search Cruises</h3>
+    <div class="cruise-search-form">
+      <input type="text" id="cruiseDest" placeholder="Destination or departure port (e.g. Caribbean, Miami)" />
+      <select id="cruiseMonth">
+        <option value="">Any month</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+      <select id="cruiseDuration">
+        <option value="">Any duration</option>
+        <option value="short">2–5 nights</option>
+        <option value="medium">6–9 nights</option>
+        <option value="long">10–14 nights</option>
+        <option value="extended">15+ nights</option>
+      </select>
+      <button type="button" onclick="searchCruises()">Search Cruises</button>
+    </div>
+
+    <div class="tour-partners" style="margin-top:24px;">
+      <p>Browse by cruise line:</p>
+      <a href="https://www.cruisedirect.com" target="_blank" rel="noopener" class="partner-btn">CruiseDirect</a>
+      <a href="https://www.royalcaribbean.com" target="_blank" rel="noopener" class="partner-btn">Royal Caribbean</a>
+      <a href="https://www.carnival.com" target="_blank" rel="noopener" class="partner-btn">Carnival</a>
+      <a href="https://www.ncl.com" target="_blank" rel="noopener" class="partner-btn">Norwegian</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="cruise-destinations">
+  <h2>Popular Cruise Destinations</h2>
+  <div class="dest-grid">
+    <a class="dest-card" href="https://www.cruisedirect.com/results?destination=Caribbean" target="_blank" rel="noopener">
+      <div class="dest-bg" style="background-image:url('https://images.unsplash.com/photo-1548574505-5e239809ee19')"></div>
+      <div class="dest-overlay"></div>
+      <div class="dest-label">Caribbean</div>
+    </a>
+    <a class="dest-card" href="https://www.cruisedirect.com/results?destination=Mediterranean" target="_blank" rel="noopener">
+      <div class="dest-bg" style="background-image:url('https://images.unsplash.com/photo-1533105079780-92b9be482077')"></div>
+      <div class="dest-overlay"></div>
+      <div class="dest-label">Mediterranean</div>
+    </a>
+    <a class="dest-card" href="https://www.cruisedirect.com/results?destination=Alaska" target="_blank" rel="noopener">
+      <div class="dest-bg" style="background-image:url('https://images.unsplash.com/photo-1531600822242-3fc4d2c5dc7d')"></div>
+      <div class="dest-overlay"></div>
+      <div class="dest-label">Alaska</div>
+    </a>
+    <a class="dest-card" href="https://www.cruisedirect.com/results?destination=Europe" target="_blank" rel="noopener">
+      <div class="dest-bg" style="background-image:url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b')"></div>
+      <div class="dest-overlay"></div>
+      <div class="dest-label">Northern Europe</div>
+    </a>
+  </div>
+</section>
+
+<section class="why-travelpayouts">
+  <div class="why-grid">
+    <div class="why-card">
+      <span>🚢</span>
+      <h3>All Major Lines</h3>
+      <p>Carnival, Royal Caribbean, Norwegian, Celebrity, MSC and more.</p>
+    </div>
+    <div class="why-card">
+      <span>🌊</span>
+      <h3>400+ Itineraries</h3>
+      <p>From weekend getaways to world voyages — find the right cruise for you.</p>
+    </div>
+    <div class="why-card">
+      <span>🍽️</span>
+      <h3>All-Inclusive Fun</h3>
+      <p>Dining, entertainment, and ports of call all wrapped in one price.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h2>✈️ Sunday Travel Deals</h2>
+      <p>Discover travel deals and unforgettable experiences.</p>
+      <p class="footer-affiliate-note">This site contains affiliate links. We may earn a commission when you book through our links at no extra cost to you.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Explore</h3>
+      <a href="index.html">Home</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="flights.html">Flights</a>
+      <a href="cars.html">Cars</a>
+      <a href="tours.html">Tours</a>
+      <a href="cruises.html">Cruises</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="footer-links">
+      <h3>Support</h3>
+      <a href="#">Help Center</a>
+      <a href="#">FAQ</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <div class="footer-links">
+      <h3>Connect</h3>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Sunday Travel Deals</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

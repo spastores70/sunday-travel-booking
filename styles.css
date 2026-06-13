@@ -1021,6 +1021,339 @@ a.deal-card:hover {
   }
 }
 
+/* ── Category tiles (homepage) ──────────────────────────────────────────────── */
+.categories {
+  padding: 80px 8%;
+  background: white;
+}
+
+.categories h2 {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.categories-lead {
+  color: #666;
+  font-size: 17px;
+  margin-bottom: 40px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.category-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 36px 16px;
+  border-radius: 22px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 12px 35px rgba(0,0,0,.15);
+}
+
+.category-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 55px rgba(0,0,0,.2);
+}
+
+.category-tile span {
+  font-size: 38px;
+}
+
+.tile-hotels  { background: linear-gradient(135deg, #003b95, #0071c2); }
+.tile-flights { background: linear-gradient(135deg, #ff4d79, #ffb000); }
+.tile-cars    { background: linear-gradient(135deg, #00a878, #005f43); }
+.tile-tours   { background: linear-gradient(135deg, #7c3aed, #c026d3); }
+.tile-cruises { background: linear-gradient(135deg, #0ea5e9, #0c4a6e); }
+
+/* ── Shared widget section styles ────────────────────────────────────────────── */
+.fallback-search {
+  margin-top: 30px;
+  padding-top: 28px;
+  border-top: 1px solid #eee;
+}
+
+.fallback-search h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: #003b95;
+}
+
+.search-note {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #666;
+}
+
+.tour-partners {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tour-partners p {
+  color: #555;
+  font-size: 14px;
+  margin: 0;
+}
+
+.partner-btn {
+  padding: 8px 20px;
+  border-radius: 30px;
+  background: #eef6ff;
+  color: #003b95;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  border: 1px solid #cce0ff;
+  transition: background .2s, color .2s;
+}
+
+.partner-btn:hover {
+  background: #003b95;
+  color: white;
+}
+
+/* ── Cars page ───────────────────────────────────────────────────────────────── */
+.cars-hero {
+  min-height: 420px;
+  background:
+    linear-gradient(135deg, rgba(0, 90, 60, .78), rgba(0, 160, 100, .4)),
+    url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d") center/cover;
+  color: white;
+}
+
+.cars-hero-content {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.cars-hero-content h1 { font-size: 56px; margin-bottom: 15px; }
+.cars-hero-content p  { font-size: 22px; }
+
+.cars-widget-section {
+  padding: 60px 8%;
+  background: #eef6ff;
+}
+
+.cars-widget-box {
+  background: rgba(255,255,255,.85);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 25px 70px rgba(0,0,0,.12);
+}
+
+.car-search-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 12px;
+}
+
+.car-search-form input,
+.car-search-form button {
+  padding: 15px 16px;
+  border-radius: 14px;
+  border: 1px solid #dde;
+  font-size: 15px;
+}
+
+.car-search-form button {
+  background: linear-gradient(90deg, #00a878, #005f43);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── Tours page ──────────────────────────────────────────────────────────────── */
+.tours-hero {
+  min-height: 420px;
+  background:
+    linear-gradient(135deg, rgba(100, 20, 180, .75), rgba(200, 0, 180, .4)),
+    url("https://images.unsplash.com/photo-1473116763249-2faaef81ccda") center/cover;
+  color: white;
+}
+
+.tours-hero-content {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.tours-hero-content h1 { font-size: 56px; margin-bottom: 15px; }
+.tours-hero-content p  { font-size: 22px; }
+
+.tours-widget-section {
+  padding: 60px 8%;
+  background: #eef6ff;
+}
+
+.tours-widget-box {
+  background: rgba(255,255,255,.85);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 25px 70px rgba(0,0,0,.12);
+}
+
+.tour-search-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tour-search-form input,
+.tour-search-form button {
+  padding: 15px 16px;
+  border-radius: 14px;
+  border: 1px solid #dde;
+  font-size: 15px;
+}
+
+.tour-search-form button {
+  background: linear-gradient(90deg, #7c3aed, #c026d3);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ── Cruises page ────────────────────────────────────────────────────────────── */
+.cruises-hero {
+  min-height: 420px;
+  background:
+    linear-gradient(135deg, rgba(0, 60, 120, .75), rgba(0, 170, 230, .4)),
+    url("https://images.unsplash.com/photo-1548574505-5e239809ee19") center/cover;
+  color: white;
+}
+
+.cruises-hero-content {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.cruises-hero-content h1 { font-size: 56px; margin-bottom: 15px; }
+.cruises-hero-content p  { font-size: 22px; }
+
+.cruises-widget-section {
+  padding: 60px 8%;
+  background: #eef6ff;
+}
+
+.cruises-widget-box {
+  background: rgba(255,255,255,.85);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 25px 70px rgba(0,0,0,.12);
+}
+
+.cruises-widget-box h3 {
+  font-size: 22px;
+  color: #003b95;
+  margin-bottom: 16px;
+}
+
+.cruise-search-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 12px;
+}
+
+.cruise-search-form input,
+.cruise-search-form select,
+.cruise-search-form button {
+  padding: 15px 16px;
+  border-radius: 14px;
+  border: 1px solid #dde;
+  font-size: 15px;
+}
+
+.cruise-search-form button {
+  background: linear-gradient(90deg, #0ea5e9, #0c4a6e);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── Cruise destination grid ─────────────────────────────────────────────────── */
+.cruise-destinations {
+  padding: 80px 8%;
+  background: white;
+}
+
+.cruise-destinations h2 {
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.dest-card {
+  position: relative;
+  height: 220px;
+  border-radius: 22px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-end;
+  transition: transform .2s;
+}
+
+.dest-card:hover {
+  transform: translateY(-5px);
+}
+
+.dest-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform .4s;
+}
+
+.dest-card:hover .dest-bg {
+  transform: scale(1.05);
+}
+
+.dest-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.65), transparent);
+}
+
+.dest-label {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+}
+
 /* ── Hamburger button (hidden on desktop) ──────────────────────────────────── */
 .hamburger {
   display: none;
@@ -1242,6 +1575,64 @@ a.deal-card:hover {
   }
 
   .about-card h2 {
+    font-size: 28px;
+  }
+
+  /* ── Category tiles ── */
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .category-tile {
+    padding: 26px 10px;
+    font-size: 14px;
+  }
+
+  .category-tile span {
+    font-size: 28px;
+  }
+
+  /* ── Cars / Tours / Cruises search forms ── */
+  .car-search-form,
+  .tour-search-form,
+  .cruise-search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .cars-hero-content h1,
+  .tours-hero-content h1,
+  .cruises-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .cars-hero-content p,
+  .tours-hero-content p,
+  .cruises-hero-content p {
+    font-size: 16px;
+  }
+
+  .cars-hero-content,
+  .tours-hero-content,
+  .cruises-hero-content {
+    padding: 80px 20px;
+  }
+
+  .cars-widget-section,
+  .tours-widget-section,
+  .cruises-widget-section {
+    padding: 40px 5%;
+  }
+
+  /* ── Cruise destination grid ── */
+  .dest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cruise-destinations {
+    padding: 50px 5%;
+  }
+
+  .cruise-destinations h2 {
     font-size: 28px;
   }
 }
