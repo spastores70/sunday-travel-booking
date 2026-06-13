@@ -110,6 +110,43 @@ function searchFlights() {
   window.open('https://www.aviasales.com/search?' + params.toString(), '_blank');
 }
 
+// ── Hotels page search form ───────────────────────────────────────────────────
+function searchHotelsPage() {
+  var dest     = document.getElementById('hDest').value.trim();
+  var checkIn  = document.getElementById('hCheckIn').value;
+  var checkOut = document.getElementById('hCheckOut').value;
+  var guests   = document.getElementById('hGuests').value;
+
+  if (!dest) { alert('Please enter a destination.'); return; }
+
+  var params = new URLSearchParams({ ss: dest, group_adults: guests });
+  if (checkIn)  params.set('checkin',  checkIn);
+  if (checkOut) params.set('checkout', checkOut);
+  if (BOOKING_AID !== 'YOUR_BOOKING_AID') params.set('aid', BOOKING_AID);
+
+  window.open('https://www.booking.com/searchresults.html?' + params.toString(), '_blank');
+}
+
+// ── Flights page search form ───────────────────────────────────────────────────
+function searchFlightsPage() {
+  var from   = document.getElementById('fFrom').value.trim();
+  var to     = document.getElementById('fTo').value.trim();
+  var depart = document.getElementById('fDepart').value;
+  var pax    = document.getElementById('fPax').value;
+
+  if (!from || !to) { alert('Please enter origin and destination.'); return; }
+
+  var params = new URLSearchParams({
+    origin:       from,
+    destination:  to,
+    adults:       pax,
+    marker:       TP_MARKER
+  });
+  if (depart) params.set('depart_date', depart);
+
+  window.open('https://www.aviasales.com/search?' + params.toString(), '_blank');
+}
+
 // ── Car search → RentalCars / Discover Cars ───────────────────────────────────
 function searchCars() {
   var pickup = document.getElementById('carPickup').value.trim();

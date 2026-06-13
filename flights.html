@@ -42,10 +42,31 @@
       4. Paste it below, replacing this comment block
       OR: replace YOUR_MARKER in the script src below with your marker ID
     -->
+    <!--
+      Once you have your Travelpayouts marker, replace YOUR_MARKER below
+      and delete the fallback form. Until then the form below works via Aviasales.
+    -->
     <script
       src="https://c.travelpayouts.com/widgetbox?type=search_form&popup=false&locale=en&color_button=%23ff4d79&color_icons=%23ff4d79&secondary=economy&powered_by=true&target_host=www.aviasales.com&uuid=YOUR_MARKER"
       charset="utf-8">
     </script>
+
+    <!-- Fallback flight search — works immediately via Aviasales -->
+    <div class="fallback-search">
+      <h3>Search Flights</h3>
+      <div class="flight-search-form">
+        <input type="text" id="fFrom"   placeholder="From (city or airport)" />
+        <input type="text" id="fTo"     placeholder="To (city or airport)" />
+        <input type="date" id="fDepart" title="Departure date" />
+        <select id="fPax" title="Passengers">
+          <option value="1">1 Passenger</option>
+          <option value="2">2 Passengers</option>
+          <option value="3">3 Passengers</option>
+          <option value="4">4 Passengers</option>
+        </select>
+        <button type="button" onclick="searchFlightsPage()">Search Flights</button>
+      </div>
+    </div>
 
   </div>
 </section>

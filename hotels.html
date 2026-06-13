@@ -43,10 +43,31 @@
       4. Paste it below, replacing this comment block
       OR: replace YOUR_MARKER in the script src below with your marker ID
     -->
+    <!--
+      Once you have your Travelpayouts marker, replace YOUR_MARKER below
+      and delete the fallback form. Until then the form below works via Booking.com.
+    -->
     <script
       src="https://c.travelpayouts.com/widgetbox?type=hotels_search_form&host=hotellook.com&uuid=YOUR_MARKER&locale=en&currency=usd&powered_by=true"
       charset="utf-8">
     </script>
+
+    <!-- Fallback hotel search — works immediately via Booking.com -->
+    <div class="fallback-search">
+      <h3>Search Hotels</h3>
+      <div class="hotel-search-form">
+        <input type="text" id="hDest"    placeholder="Destination (city, hotel, or area)" />
+        <input type="date" id="hCheckIn" title="Check-in date" />
+        <input type="date" id="hCheckOut" title="Check-out date" />
+        <select id="hGuests" title="Number of guests">
+          <option value="1">1 Guest</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+        </select>
+        <button type="button" onclick="searchHotelsPage()">Search Hotels</button>
+      </div>
+    </div>
 
   </div>
 </section>

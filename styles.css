@@ -1126,6 +1126,56 @@ a.deal-card:hover {
   color: white;
 }
 
+/* ── Hotels page fallback form ───────────────────────────────────────────────── */
+.hotel-search-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  gap: 12px;
+}
+
+.hotel-search-form input,
+.hotel-search-form select,
+.hotel-search-form button {
+  padding: 15px 16px;
+  border-radius: 14px;
+  border: 1px solid #dde;
+  font-size: 15px;
+}
+
+.hotel-search-form button {
+  background: linear-gradient(90deg, #003b95, #0071c2);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── Flights page fallback form ──────────────────────────────────────────────── */
+.flight-search-form {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr auto;
+  gap: 12px;
+}
+
+.flight-search-form input,
+.flight-search-form select,
+.flight-search-form button {
+  padding: 15px 16px;
+  border-radius: 14px;
+  border: 1px solid #dde;
+  font-size: 15px;
+}
+
+.flight-search-form button {
+  background: linear-gradient(90deg, #ff4d79, #ffb000);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 /* ── Cars page ───────────────────────────────────────────────────────────────── */
 .cars-hero {
   min-height: 420px;
@@ -1592,7 +1642,9 @@ a.deal-card:hover {
     font-size: 28px;
   }
 
-  /* ── Cars / Tours / Cruises search forms ── */
+  /* ── Hotel / Flight / Cars / Tours / Cruises search forms ── */
+  .hotel-search-form,
+  .flight-search-form,
   .car-search-form,
   .tour-search-form,
   .cruise-search-form {
