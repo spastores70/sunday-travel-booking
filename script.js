@@ -170,24 +170,17 @@ function searchHotels() {
 
 // ── Flight search → Aviasales ─────────────────────────────────────────────────
 function searchFlights() {
-  var from = document.getElementById('flightFrom').value.trim();
-  var to = document.getElementById('flightTo').value.trim();
-  var date = document.getElementById('departDate').value;
-  var pax = document.getElementById('passengers').value;
+  var from       = document.getElementById('flightFrom').value.trim();
+  var to         = document.getElementById('flightTo').value.trim();
+  var depart     = document.getElementById('departDate').value;
+  var returnDate = document.getElementById('returnDate').value;
+  var pax        = document.getElementById('passengers').value;
 
-  if (!from || !to) {
-    alert('Please enter origin and destination.');
-    return;
-  }
+  if (!from || !to) { alert('Please enter origin and destination.'); return; }
 
-  // Aviasales deep link with marker; full IATA routing requires server-side lookup
-  var params = new URLSearchParams({
-    origin: from,
-    destination: to,
-    depart_date: date || '',
-    adults: pax,
-    marker: TP_MARKER
-  });
+  var params = new URLSearchParams({ origin: from, destination: to, adults: pax, marker: TP_MARKER });
+  if (depart)     params.set('depart_date', depart);
+  if (returnDate) params.set('return_date', returnDate);
 
   window.open('https://www.aviasales.com/search?' + params.toString(), '_blank');
 }
@@ -211,20 +204,17 @@ function searchHotelsPage() {
 
 // ── Flights page search form ───────────────────────────────────────────────────
 function searchFlightsPage() {
-  var from   = document.getElementById('fFrom').value.trim();
-  var to     = document.getElementById('fTo').value.trim();
-  var depart = document.getElementById('fDepart').value;
-  var pax    = document.getElementById('fPax').value;
+  var from       = document.getElementById('fFrom').value.trim();
+  var to         = document.getElementById('fTo').value.trim();
+  var depart     = document.getElementById('fDepart').value;
+  var returnDate = document.getElementById('fReturn').value;
+  var pax        = document.getElementById('fPax').value;
 
   if (!from || !to) { alert('Please enter origin and destination.'); return; }
 
-  var params = new URLSearchParams({
-    origin:       from,
-    destination:  to,
-    adults:       pax,
-    marker:       TP_MARKER
-  });
-  if (depart) params.set('depart_date', depart);
+  var params = new URLSearchParams({ origin: from, destination: to, adults: pax, marker: TP_MARKER });
+  if (depart)     params.set('depart_date', depart);
+  if (returnDate) params.set('return_date', returnDate);
 
   window.open('https://www.aviasales.com/search?' + params.toString(), '_blank');
 }
