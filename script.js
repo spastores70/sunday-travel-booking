@@ -13,8 +13,8 @@ function toggleMenu() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.menu a').forEach(function (link) {
-    link.addEventListener('click', function () {
+  document.querySelectorAll('.menu a, .menu button').forEach(function (item) {
+    item.addEventListener('click', function () {
       var menu = document.querySelector('.menu');
       var btn = document.getElementById('hamburger');
       if (menu && menu.classList.contains('open')) {
@@ -29,6 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // ── Login / Sign Up modal ────────────────────────────────────────────────────
 function openModal() {
+  var menu = document.querySelector('.menu');
+  var hamburger = document.getElementById('hamburger');
+  if (menu && menu.classList.contains('open')) {
+    menu.classList.remove('open');
+    if (hamburger) hamburger.innerHTML = '&#9776;';
+  }
   switchModalTab('login');
   document.getElementById('loginModal').style.display = 'flex';
 }
