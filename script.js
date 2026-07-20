@@ -146,18 +146,9 @@ function setSearchTab(type) {
 
 // ── Hotel search → Booking.com ───────────────────────────────────────────────
 function searchHotels() {
-  var dest     = document.getElementById('hotelDest').value.trim();
-  var checkIn  = document.getElementById('checkIn').value;
-  var checkOut = document.getElementById('checkOut').value;
-  var guests   = document.getElementById('guests').value;
-
+  var dest = document.getElementById('hotelDest').value.trim();
   if (!dest) { alert('Please enter a destination.'); return; }
-
-  var params = new URLSearchParams({ destination: dest, adults: guests, sort: 'recommended' });
-  if (checkIn)  params.set('startDate', checkIn);
-  if (checkOut) params.set('endDate', checkOut);
-
-  window.open('https://www.expedia.com/Hotel-Search?' + params.toString(), '_blank');
+  window.open('https://www.trivago.com/?query=' + encodeURIComponent(dest), '_blank');
 }
 
 // ── Flight search → Aviasales ─────────────────────────────────────────────────
@@ -179,18 +170,9 @@ function searchFlights() {
 
 // ── Hotels page search form ───────────────────────────────────────────────────
 function searchHotelsPage() {
-  var dest     = document.getElementById('hDest').value.trim();
-  var checkIn  = document.getElementById('hCheckIn').value;
-  var checkOut = document.getElementById('hCheckOut').value;
-  var guests   = document.getElementById('hGuests').value;
-
+  var dest = document.getElementById('hDest').value.trim();
   if (!dest) { alert('Please enter a destination.'); return; }
-
-  var params = new URLSearchParams({ destination: dest, adults: guests, sort: 'recommended' });
-  if (checkIn)  params.set('startDate', checkIn);
-  if (checkOut) params.set('endDate', checkOut);
-
-  window.open('https://www.expedia.com/Hotel-Search?' + params.toString(), '_blank');
+  window.open('https://www.trivago.com/?query=' + encodeURIComponent(dest), '_blank');
 }
 
 // ── Flights page search form ───────────────────────────────────────────────────
