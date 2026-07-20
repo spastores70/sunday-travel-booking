@@ -145,27 +145,19 @@ function setSearchTab(type) {
 }
 
 // ── Hotel search → Booking.com ───────────────────────────────────────────────
-// Booking.com is globally accessible. For affiliate tracking, add your
-// Booking.com AID from Travelpayouts (Tools → Programs → Booking.com).
-var BOOKING_AID = 'YOUR_BOOKING_AID'; // replace with your Booking.com AID
-
 function searchHotels() {
-  var dest = document.getElementById('hotelDest').value.trim();
-  var checkIn = document.getElementById('checkIn').value;
+  var dest     = document.getElementById('hotelDest').value.trim();
+  var checkIn  = document.getElementById('checkIn').value;
   var checkOut = document.getElementById('checkOut').value;
-  var guests = document.getElementById('guests').value;
+  var guests   = document.getElementById('guests').value;
 
-  if (!dest) {
-    alert('Please enter a destination.');
-    return;
-  }
+  if (!dest) { alert('Please enter a destination.'); return; }
 
-  var params = new URLSearchParams({ ss: dest, group_adults: guests });
-  if (checkIn)  params.set('checkin', checkIn);
-  if (checkOut) params.set('checkout', checkOut);
-  if (BOOKING_AID !== 'YOUR_BOOKING_AID') params.set('aid', BOOKING_AID);
+  var params = new URLSearchParams({ destination: dest, adults: guests, sort: 'recommended' });
+  if (checkIn)  params.set('startDate', checkIn);
+  if (checkOut) params.set('endDate', checkOut);
 
-  window.open('https://www.booking.com/searchresults.html?' + params.toString(), '_blank');
+  window.open('https://www.expedia.com/Hotel-Search?' + params.toString(), '_blank');
 }
 
 // ── Flight search → Aviasales ─────────────────────────────────────────────────
@@ -194,12 +186,11 @@ function searchHotelsPage() {
 
   if (!dest) { alert('Please enter a destination.'); return; }
 
-  var params = new URLSearchParams({ ss: dest, group_adults: guests });
-  if (checkIn)  params.set('checkin',  checkIn);
-  if (checkOut) params.set('checkout', checkOut);
-  if (BOOKING_AID !== 'YOUR_BOOKING_AID') params.set('aid', BOOKING_AID);
+  var params = new URLSearchParams({ destination: dest, adults: guests, sort: 'recommended' });
+  if (checkIn)  params.set('startDate', checkIn);
+  if (checkOut) params.set('endDate', checkOut);
 
-  window.open('https://www.booking.com/searchresults.html?' + params.toString(), '_blank');
+  window.open('https://www.expedia.com/Hotel-Search?' + params.toString(), '_blank');
 }
 
 // ── Flights page search form ───────────────────────────────────────────────────
