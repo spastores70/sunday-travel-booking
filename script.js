@@ -148,7 +148,7 @@ function setSearchTab(type) {
 function searchHotels() {
   var dest = document.getElementById('hotelDest').value.trim();
   if (!dest) { alert('Please enter a destination.'); return; }
-  window.open('https://www.trivago.com/?query=' + encodeURIComponent(dest), '_blank');
+  window.location.href = 'hotels.html?destination=' + encodeURIComponent(dest);
 }
 
 // ── Flight search → Aviasales ─────────────────────────────────────────────────
@@ -172,7 +172,7 @@ function searchFlights() {
 function searchHotelsPage() {
   var dest = document.getElementById('hDest').value.trim();
   if (!dest) { alert('Please enter a destination.'); return; }
-  window.open('https://www.trivago.com/?query=' + encodeURIComponent(dest), '_blank');
+  // Travelpayouts Drive handles hotel routing automatically
 }
 
 // ── Flights page search form ───────────────────────────────────────────────────
