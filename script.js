@@ -145,36 +145,21 @@ function setSearchTab(type) {
 }
 
 // ── Hotel search → Klook via Travelpayouts affiliate link ────────────────────
-var TP_HOTEL_BASE = 'https://tp.media/r?campaign_id=137&marker=738364&p=4110&trs=539166&u=';
+function buildKlookUrl(dest) {
+  var klookSearch = 'https://www.klook.com/en-US/search/?query=' + encodeURIComponent(dest + ' hotels');
+  return 'https://tp.media/r?campaign_id=137&marker=738364&p=4110&trs=539166&u=' + encodeURIComponent(klookSearch);
+}
 
 function searchHotels() {
-  var dest     = document.getElementById('hotelDest').value.trim();
-  var checkIn  = document.getElementById('checkIn').value;
-  var checkOut = document.getElementById('checkOut').value;
-  var guests   = document.getElementById('guests').value;
-
+  var dest = document.getElementById('hotelDest').value.trim();
   if (!dest) { alert('Please enter a destination.'); return; }
-
-  var klookParams = new URLSearchParams({ place_name: dest, adult: guests });
-  if (checkIn)  klookParams.set('checkin', checkIn);
-  if (checkOut) klookParams.set('checkout', checkOut);
-
-  window.open(TP_HOTEL_BASE + encodeURIComponent('https://klook.com/en-US/hotels/list/?' + klookParams.toString()), '_blank');
+  window.open(buildKlookUrl(dest), '_blank');
 }
 
 function searchHotelsPage() {
-  var dest     = document.getElementById('hDest').value.trim();
-  var checkIn  = document.getElementById('hCheckIn').value;
-  var checkOut = document.getElementById('hCheckOut').value;
-  var guests   = document.getElementById('hGuests').value;
-
+  var dest = document.getElementById('hDest').value.trim();
   if (!dest) { alert('Please enter a destination.'); return; }
-
-  var klookParams = new URLSearchParams({ place_name: dest, adult: guests });
-  if (checkIn)  klookParams.set('checkin', checkIn);
-  if (checkOut) klookParams.set('checkout', checkOut);
-
-  window.open(TP_HOTEL_BASE + encodeURIComponent('https://klook.com/en-US/hotels/list/?' + klookParams.toString()), '_blank');
+  window.open(buildKlookUrl(dest), '_blank');
 }
 
 // ── Flight search → Aviasales via Travelpayouts affiliate link ───────────────
