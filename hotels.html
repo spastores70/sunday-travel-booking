@@ -4,31 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Hotels | Sunday Travel Deals</title>
+  <meta
+    name="description"
+    content="Search hotels, accommodations, tours, and travel experiences through Sunday Travel Deals."
+  />
+
+  <title>Hotels & Accommodations | Sunday Travel Deals</title>
+
   <link rel="stylesheet" href="styles.css" />
-  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://emrldtp.cc/NTM5MTY2.js?t=539166';
-      document.head.appendChild(script);
-  })();
-  </script>
-  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.type = "module";
-      script.src = "https://tpwgts.com/wl_web/main.js?wl_id=18915";
-      document.head.appendChild(script);
-  })();
-  </script>
 </head>
+
 <body>
 
 <header class="hotel-hero">
   <nav>
     <div class="logo">✈️ Sunday Travel Deals</div>
+
     <div class="menu">
       <a href="index.html">Home</a>
       <a href="hotels.html">Hotels</a>
@@ -40,135 +31,177 @@
       <a href="contact.html">Contact</a>
       <a href="privacy.html">Privacy</a>
     </div>
-    <button type="button" class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
+
+    <button
+      type="button"
+      class="hamburger"
+      id="hamburger"
+      onclick="toggleMenu()"
+      aria-label="Open menu"
+    >
+      &#9776;
+    </button>
   </nav>
 
   <div class="hotel-hero-content">
-    <h1>Find Your Perfect Hotel</h1>
-    <p>Search worldwide hotel deals powered by Travelpayouts.</p>
+    <h1>Find Your Perfect Stay</h1>
+
+    <p>
+      Search hotels and accommodations through our approved travel partner.
+    </p>
   </div>
 </header>
 
-<section class="hotel-widget-section">
-  <div class="hotel-widget-box">
+<main>
 
-    <!-- Hotel search form -->
-    <div class="fallback-search">
-      <h3>Search Hotels &amp; Accommodation</h3>
-      <div class="hotel-search-form">
-        <input type="text" id="hDest"     placeholder="Destination (city, hotel, or area)" />
-        <input type="date" id="hCheckIn"  title="Check-in date" />
-        <input type="date" id="hCheckOut" title="Check-out date" />
-        <select id="hGuests" title="Number of guests">
-          <option value="1">1 Guest</option>
-          <option value="2">2 Guests</option>
-          <option value="3">3 Guests</option>
-          <option value="4">4 Guests</option>
-        </select>
-        <button type="button" onclick="searchHotelsPage()">Search Hotels</button>
+  <section class="hotel-widget-section">
+    <div class="hotel-widget-box">
+
+      <div class="fallback-search">
+        <h2>Search Hotels &amp; Accommodations</h2>
+
+        <p class="search-note">
+          Enter your destination and travel dates. You will continue to Klook
+          through our Travelpayouts affiliate connection.
+        </p>
+
+        <form
+          class="hotel-search-form"
+          id="hotelPageSearchForm"
+          onsubmit="searchHotelsPage(event)"
+        >
+          <input
+            type="text"
+            id="hDest"
+            placeholder="City, destination, hotel, or area"
+            autocomplete="off"
+            required
+          />
+
+          <input
+            type="date"
+            id="hCheckIn"
+            title="Check-in date"
+            required
+          />
+
+          <input
+            type="date"
+            id="hCheckOut"
+            title="Check-out date"
+            required
+          />
+
+          <select id="hGuests" title="Number of guests">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5 Guests</option>
+            <option value="6">6 Guests</option>
+          </select>
+
+          <button type="submit">
+            Search Hotels
+          </button>
+        </form>
+
+        <p id="hotelSearchStatus" class="search-note"></p>
       </div>
+
+    </div>
+  </section>
+
+  <section class="why-travelpayouts">
+    <div class="why-grid">
+
+      <article class="why-card">
+        <span>🏨</span>
+        <h3>Hotels & Stays</h3>
+        <p>
+          Search accommodations available through Klook.
+        </p>
+      </article>
+
+      <article class="why-card">
+        <span>🔒</span>
+        <h3>Partner Checkout</h3>
+        <p>
+          Reservations and payments are completed securely on the partner’s
+          website.
+        </p>
+      </article>
+
+      <article class="why-card">
+        <span>🌎</span>
+        <h3>Worldwide Destinations</h3>
+        <p>
+          Explore accommodations and travel experiences in destinations around
+          the world.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Need help?</h2>
+    <p>Email us at support@sundaytraveldeals.com</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+
+  <div class="footer-top">
+
+    <div class="footer-brand">
+      <h2>✈️ Sunday Travel Deals</h2>
+
+      <p>
+        Discover accommodations and unforgettable travel experiences.
+      </p>
+
+      <p class="footer-affiliate-note">
+        Sunday Travel Deals may earn a commission when you book through
+        selected partner links. Prices and availability are controlled by the
+        travel provider.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Explore</h3>
+
+      <a href="index.html">Home</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="flights.html">Flights</a>
+      <a href="cars.html">Cars</a>
+      <a href="tours.html">Tours</a>
+      <a href="cruises.html">Cruises</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Company</h3>
+
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Connect</h3>
+
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
     </div>
 
   </div>
-</section>
 
-<section id="contact" class="contact-section">
-  <h2>Need help?</h2>
-  <p>Email us at support@sundaytraveldeals.com</p>
-</section>
-<footer class="site-footer">
-
-<div class="footer-top">
-
-<div class="footer-brand">
-
-<h2>
-✈️ Sunday Travel Deals
-</h2>
-
-<p>
-
-Discover hotel deals and unforgettable travel experiences.
-
-</p>
-
-</div>
-
-<div class="footer-links">
-
-<h3>
-Explore
-</h3>
-
-<a href="index.html">
-Home
-</a>
-
-<a href="hotels.html">
-Hotels
-</a>
-
-<a href="about.html">
-About
-</a>
-
-<a href="contact.html">
-Contact
-</a>
-
-<a href="privacy.html">
-Privacy
-</a>
-
-</div>
-
-<div class="footer-links">
-
-<h3>
-Support
-</h3>
-
-<a href="#">
-Help Center
-</a>
-
-<a href="#">
-FAQ
-</a>
-
-<a href="#">
-Terms
-</a>
-
-</div>
-
-<div class="footer-links">
-
-<h3>
-Connect
-</h3>
-
-<a href="#">
-Facebook
-</a>
-
-<a href="#">
-Instagram
-</a>
-
-<a href="#">
-YouTube
-</a>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-© 2026 Sunday Travel Deals
-
-</div>
+  <div class="footer-bottom">
+    © 2026 Sunday Travel Deals
+  </div>
 
 </footer>
 

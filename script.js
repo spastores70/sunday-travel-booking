@@ -147,16 +147,160 @@ function setSearchTab(type) {
 // ── Hotel search → Klook via Travelpayouts affiliate link ────────────────────
 var TP_HOTEL_URL = 'https://tp.media/r?campaign_id=137&marker=738364&p=4110&trs=539166&u=https%3A%2F%2Fklook.com';
 
-function searchHotels() {
-  var dest = document.getElementById('hotelDest').value.trim();
-  if (!dest) { alert('Please enter a destination.'); return; }
-  window.location.href = TP_HOTEL_URL;
+// ── Hotels and accommodations through Klook / Travelpayouts ─────────────────
+
+// Keep the affiliate link exactly as provided by Travelpayouts.
+var TP_KLOOK_URL =
+  'https://tp.media/r?campaign_id=137&marker=738364&p=4110&trs=539166&u=';
+
+/**
+ * Opens Klook through the user's Travelpayouts affiliate tracking link.
+ */
+function openKlookHotelSearch(destination, checkIn, checkOut, guests) {
+  var klookUrl = new URL('https://www.klook.com/hotels/');
+
+  /*
+   * Klook may not recognize every custom search parameter.
+   * The destination is included when possible, while the affiliate redirect
+   * still sends visitors through the approved Travelpayouts tracking link.
+   */
+  if (destination) {
+    klookUrl.searchParams.set('query', destination);
+  }
+
+  if (checkIn) {
+    klookUrl.searchParams.set('checkin', checkIn);
+  }
+
+  if (checkOut) {
+    klookUrl.searchParams.set('checkout', checkOut);
+  }
+
+  if (guests) {
+    klookUrl.searchParams.set('guests', guests);
+  }
+
+  var affiliateUrl =
+    TP_KLOOK_URL + encodeURIComponent(klookUrl.toString());
+
+  window.open(affiliateUrl, '_blank', 'noopener,noreferrer');
 }
 
-function searchHotelsPage() {
-  var dest = document.getElementById('hDest').value.trim();
-  if (!dest) { alert('Please enter a destination.'); return; }
-  window.location.href = TP_HOTEL_URL;
+/**
+ * Validates hotel search information.
+ */
+function validateHotelSearch(destination, checkIn, checkOut) {
+  if (!destination) {
+    alert('Please enter a destination.');
+    return false;
+  }
+
+  if (!checkIn || !checkOut) {
+    alert('Please select your check-in and check-out dates.');
+    return false;
+  }
+
+  var checkInDate = new Date(checkIn + 'T00:00:00');
+  var checkOutDate = new Date(checkOut + 'T00:00:00');
+
+  if (checkOutDate <= checkInDate) {
+    alert('Check-out must be later than check-in.');
+    return false;
+  }
+
+  return true;
+}
+
+/**
+ * Homepage hotel search.
+ */
+function searchHotels(event) {
+  if (event) {
+    event.preventDefault();
+  }
+
+  var destinationInput = document.getElementById('hotelDest');
+  var checkInInput = document.getElementById('checkIn');
+  var checkOutInput = document.getElementById('checkOut');
+  var guestsInput = document.getElementById('guests');
+
+  if (
+    !destinationInput ||
+    !checkInInput ||
+    !checkOutInput ||
+    !guestsInput
+  ) {
+    console.error('Homepage hotel search fields were not found.');
+    return;
+  }
+
+  var destination = destinationInput.value.trim();
+  var checkIn = checkInInput.value;
+  var checkOut = checkOutInput.value;
+  var guests = guestsInput.value;
+
+  if (!validateHotelSearch(destination, checkIn, checkOut)) {
+    return;
+  }
+
+  openKlookHotelSearch(
+    destination,
+    checkIn,
+    checkOut,
+    guests
+  );
+}
+
+/**
+ * Hotels page search.
+ */
+function searchHotelsPage(event) {
+  if (event) {
+    event.preventDefault();
+  }
+
+  var destinationInput = document.getElementById('hDest');
+  var checkInInput = document.getElementById('hCheckIn');
+  var checkOutInput = document.getElementById('hCheckOut');
+  var guestsInput = document.getElementById('hGuests');
+  var status = document.getElementById('hotelSearchStatus');
+
+  if (
+    !destinationInput ||
+    !checkInInput ||
+    !checkOutInput ||
+    !guestsInput
+  ) {
+    console.error('Hotel page search fields were not found.');
+
+    if (status) {
+      status.textContent =
+        'The hotel search form could not be loaded. Please refresh the page.';
+    }
+
+    return;
+  }
+
+  var destination = destinationInput.value.trim();
+  var checkIn = checkInInput.value;
+  var checkOut = checkOutInput.value;
+  var guests = guestsInput.value;
+
+  if (!validateHotelSearch(destination, checkIn, checkOut)) {
+    return;
+  }
+
+  if (status) {
+    status.textContent =
+      'Opening available accommodations through Klook...';
+  }
+
+  openKlookHotelSearch(
+    destination,
+    checkIn,
+    checkOut,
+    guests
+  );
 }
 
 // ── Flight search → Aviasales via Travelpayouts affiliate link ───────────────
@@ -246,4 +390,34 @@ function searchCruises() {
 function sendMessage(event) {
   event.preventDefault();
   document.getElementById('formStatus').textContent = 'Thank you! Your message has been received.';
+}function searchHotels() {
+  const destination = document.getElementById("hotelDest").value.trim();
+  const checkIn = document.getElementById("checkIn").value;
+  const checkOut = document.getElementById("checkOut").value;
+  const guests = document.getElementById("guests").value;
+
+  if (!destination) {
+    alert("Please enter a destination.");
+    document.getElementById("hotelDest").focus();
+    return;
+  }
+
+  if (!checkIn || !checkOut) {
+    alert("Please select your check-in and check-out dates.");
+    return;
+  }
+
+  if (new Date(checkOut) <= new Date(checkIn)) {
+    alert("Check-out must be later than check-in.");
+    return;
+  }
+
+  const params = new URLSearchParams({
+    destination,
+    checkIn,
+    checkOut,
+    guests
+  });
+
+  window.location.href = `hotels.html?${params.toString()}`;
 }
