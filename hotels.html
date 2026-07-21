@@ -52,29 +52,15 @@
 <section class="hotel-widget-section">
   <div class="hotel-widget-box">
 
-    <!--
-      TRAVELPAYOUTS HOTEL SEARCH WIDGET (Hotellook)
-      1. Log in to your Travelpayouts account at travelpayouts.com
-      2. Go to Tools → Widget Constructor
-      3. Choose Hotellook (hotels), copy your embed code
-      4. Paste it below, replacing this comment block
-      OR: replace YOUR_MARKER in the script src below with your marker ID
-    -->
-    <!--
-      Once you have your Travelpayouts marker, replace YOUR_MARKER below
-      and delete the fallback form. Until then the form below works via Booking.com.
-    -->
-    <script
-      src="https://c.travelpayouts.com/widgetbox?type=hotels_search_form&host=hotellook.com&uuid=YOUR_MARKER&locale=en&currency=usd&powered_by=true"
-      charset="utf-8">
-    </script>
+    <!-- Travelpayouts Klook Hotel & Accommodation Widget -->
+    <script src="https://tp.media/widget?marker=738364&type=hotel&host=klook.com&locale=en&border_radius=8&color_button=%23ff5722&color_button_text=%23ffffff&color_background=%23ffffff&color_text=%23000000" charset="utf-8"></script>
 
-    <!-- Fallback hotel search — works immediately via Booking.com -->
+    <!-- Fallback search form -->
     <div class="fallback-search">
-      <h3>Search Hotels</h3>
+      <h3>Search Hotels &amp; Accommodation</h3>
       <div class="hotel-search-form">
-        <input type="text" id="hDest"    placeholder="Destination (city, hotel, or area)" />
-        <input type="date" id="hCheckIn" title="Check-in date" />
+        <input type="text" id="hDest"     placeholder="Destination (city, hotel, or area)" />
+        <input type="date" id="hCheckIn"  title="Check-in date" />
         <input type="date" id="hCheckOut" title="Check-out date" />
         <select id="hGuests" title="Number of guests">
           <option value="1">1 Guest</option>

@@ -144,11 +144,21 @@ function setSearchTab(type) {
   }
 }
 
-// ── Hotel search → Booking.com ───────────────────────────────────────────────
+// ── Hotel search → Klook via Travelpayouts ───────────────────────────────────
 function searchHotels() {
-  var dest = document.getElementById('hotelDest').value.trim();
+  var dest     = document.getElementById('hotelDest').value.trim();
+  var checkIn  = document.getElementById('checkIn').value;
+  var checkOut = document.getElementById('checkOut').value;
+  var guests   = document.getElementById('guests').value;
+
   if (!dest) { alert('Please enter a destination.'); return; }
-  window.location.href = 'hotels.html?destination=' + encodeURIComponent(dest);
+
+  var params = new URLSearchParams({ city_name: dest, marker: TP_MARKER });
+  if (checkIn)  params.set('start_date', checkIn);
+  if (checkOut) params.set('end_date', checkOut);
+  if (guests)   params.set('number_of_travelers', guests);
+
+  window.open('https://www.klook.com/en-US/hotels/?' + params.toString(), '_blank');
 }
 
 // ── Flight search → Aviasales ─────────────────────────────────────────────────
@@ -168,11 +178,21 @@ function searchFlights() {
   window.open('https://www.aviasales.com/search?' + params.toString(), '_blank');
 }
 
-// ── Hotels page search form ───────────────────────────────────────────────────
+// ── Hotels page search form → Klook via Travelpayouts ────────────────────────
 function searchHotelsPage() {
-  var dest = document.getElementById('hDest').value.trim();
+  var dest     = document.getElementById('hDest').value.trim();
+  var checkIn  = document.getElementById('hCheckIn').value;
+  var checkOut = document.getElementById('hCheckOut').value;
+  var guests   = document.getElementById('hGuests').value;
+
   if (!dest) { alert('Please enter a destination.'); return; }
-  // Travelpayouts Drive handles hotel routing automatically
+
+  var params = new URLSearchParams({ city_name: dest, marker: TP_MARKER });
+  if (checkIn)  params.set('start_date', checkIn);
+  if (checkOut) params.set('end_date', checkOut);
+  if (guests)   params.set('number_of_travelers', guests);
+
+  window.open('https://www.klook.com/en-US/hotels/?' + params.toString(), '_blank');
 }
 
 // ── Flights page search form ───────────────────────────────────────────────────
