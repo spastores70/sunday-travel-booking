@@ -153,12 +153,11 @@ function searchHotels() {
 
   if (!dest) { alert('Please enter a destination.'); return; }
 
-  var params = new URLSearchParams({ city_name: dest, marker: TP_MARKER });
-  if (checkIn)  params.set('start_date', checkIn);
-  if (checkOut) params.set('end_date', checkOut);
-  if (guests)   params.set('number_of_travelers', guests);
+  var params = new URLSearchParams({ place_name: dest, adult: guests });
+  if (checkIn)  params.set('checkin', checkIn);
+  if (checkOut) params.set('checkout', checkOut);
 
-  window.open('https://www.klook.com/en-US/hotels/?' + params.toString(), '_blank');
+  window.open('https://www.klook.com/en-US/hotels/list/?' + params.toString(), '_blank');
 }
 
 // ── Flight search → Aviasales ─────────────────────────────────────────────────
@@ -187,12 +186,11 @@ function searchHotelsPage() {
 
   if (!dest) { alert('Please enter a destination.'); return; }
 
-  var params = new URLSearchParams({ city_name: dest, marker: TP_MARKER });
-  if (checkIn)  params.set('start_date', checkIn);
-  if (checkOut) params.set('end_date', checkOut);
-  if (guests)   params.set('number_of_travelers', guests);
+  var params = new URLSearchParams({ place_name: dest, adult: guests });
+  if (checkIn)  params.set('checkin', checkIn);
+  if (checkOut) params.set('checkout', checkOut);
 
-  window.open('https://www.klook.com/en-US/hotels/?' + params.toString(), '_blank');
+  window.open('https://www.klook.com/en-US/hotels/list/?' + params.toString(), '_blank');
 }
 
 // ── Flights page search form ───────────────────────────────────────────────────
