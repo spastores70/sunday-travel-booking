@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <meta
     name="description"
-    content="Search hotels, accommodations, tours, and travel experiences through Sunday Travel Deals."
+    content="Search hotels and accommodations around the world with Sunday Travel Deals."
   />
 
   <title>Hotels & Accommodations | Sunday Travel Deals</title>
@@ -16,20 +20,52 @@
 
 <body>
 
-<header class="hotel-hero">
-  <nav>
-    <div class="logo">✈️ Sunday Travel Deals</div>
+<header class="hotel-page-hero">
+
+  <nav class="hotel-nav">
+
+    <a href="index.html" class="hotel-logo">
+      <span class="hotel-logo-icon">✈️</span>
+
+      <span>
+        Sunday Travel Deals
+      </span>
+    </a>
 
     <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="hotels.html">Hotels</a>
-      <a href="flights.html">Flights</a>
-      <a href="cars.html">Cars</a>
-      <a href="tours.html">Tours</a>
-      <a href="cruises.html">Cruises</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="hotels.html" class="active-nav-link">
+        Hotels
+      </a>
+
+      <a href="flights.html">
+        Flights
+      </a>
+
+      <a href="cars.html">
+        Cars
+      </a>
+
+      <a href="tours.html">
+        Tours
+      </a>
+
+      <a href="cruises.html">
+        Cruises
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
     </div>
 
     <button
@@ -37,116 +73,669 @@
       class="hamburger"
       id="hamburger"
       onclick="toggleMenu()"
-      aria-label="Open menu"
+      aria-label="Open navigation menu"
     >
       &#9776;
     </button>
+
   </nav>
 
-  <div class="hotel-hero-content">
-    <h1>Find Your Perfect Stay</h1>
+  <div class="hotel-page-overlay"></div>
+
+  <div class="hotel-page-hero-content">
+
+    <div class="hotel-page-badge">
+      Hotels • Resorts • Apartments • Villas
+    </div>
+
+    <h1>
+      Find a stay you’ll love
+    </h1>
 
     <p>
-      Search hotels and accommodations through our approved travel partner.
+      Search accommodations worldwide and continue securely through our
+      approved booking partner.
     </p>
-  </div>
-</header>
 
-<main>
+    <form
+      class="premium-hotel-search"
+      id="hotelPageSearchForm"
+      onsubmit="searchHotelsPage(event)"
+    >
 
-  <section class="hotel-widget-section">
-    <div class="hotel-widget-box">
+      <div class="premium-search-field premium-search-destination">
 
-      <div class="fallback-search">
-        <h2>Search Hotels &amp; Accommodations</h2>
+        <label for="hDest">
+          Destination
+        </label>
 
-        <p class="search-note">
-          Enter your destination and travel dates. You will continue to Klook
-          through our Travelpayouts affiliate connection.
-        </p>
+        <div class="premium-input-wrap">
 
-        <form
-          class="hotel-search-form"
-          id="hotelPageSearchForm"
-          onsubmit="searchHotelsPage(event)"
-        >
+          <span class="premium-input-icon">
+            📍
+          </span>
+
           <input
             type="text"
             id="hDest"
-            placeholder="City, destination, hotel, or area"
+            placeholder="City, hotel, landmark, or destination"
             autocomplete="off"
             required
           />
 
+        </div>
+
+      </div>
+
+      <div class="premium-search-field">
+
+        <label for="hCheckIn">
+          Check-in
+        </label>
+
+        <div class="premium-input-wrap">
+
+          <span class="premium-input-icon">
+            📅
+          </span>
+
           <input
             type="date"
             id="hCheckIn"
-            title="Check-in date"
             required
           />
+
+        </div>
+
+      </div>
+
+      <div class="premium-search-field">
+
+        <label for="hCheckOut">
+          Check-out
+        </label>
+
+        <div class="premium-input-wrap">
+
+          <span class="premium-input-icon">
+            📅
+          </span>
 
           <input
             type="date"
             id="hCheckOut"
-            title="Check-out date"
             required
           />
 
-          <select id="hGuests" title="Number of guests">
-            <option value="1">1 Guest</option>
-            <option value="2" selected>2 Guests</option>
-            <option value="3">3 Guests</option>
-            <option value="4">4 Guests</option>
-            <option value="5">5 Guests</option>
-            <option value="6">6 Guests</option>
+        </div>
+
+      </div>
+
+      <div class="premium-search-field">
+
+        <label for="hGuests">
+          Travelers
+        </label>
+
+        <div class="premium-input-wrap">
+
+          <span class="premium-input-icon">
+            👤
+          </span>
+
+          <select
+            id="hGuests"
+            title="Number of guests"
+          >
+            <option value="1">
+              1 Guest
+            </option>
+
+            <option value="2" selected>
+              2 Guests
+            </option>
+
+            <option value="3">
+              3 Guests
+            </option>
+
+            <option value="4">
+              4 Guests
+            </option>
+
+            <option value="5">
+              5 Guests
+            </option>
+
+            <option value="6">
+              6 Guests
+            </option>
+
           </select>
 
-          <button type="submit">
-            Search Hotels
-          </button>
-        </form>
+        </div>
 
-        <p id="hotelSearchStatus" class="search-note"></p>
+      </div>
+
+      <button
+        type="submit"
+        class="premium-hotel-search-btn"
+      >
+        <span>
+          🔎
+        </span>
+
+        Search Stays
+      </button>
+
+    </form>
+
+    <p
+      id="hotelSearchStatus"
+      class="hotel-search-status"
+      aria-live="polite"
+    ></p>
+
+    <div class="hotel-search-assurance">
+
+      <span>
+        ✓ Worldwide accommodations
+      </span>
+
+      <span>
+        ✓ Secure partner booking
+      </span>
+
+      <span>
+        ✓ No booking fees from us
+      </span>
+
+    </div>
+
+  </div>
+
+</header>
+
+<main>
+
+  <section class="hotel-benefit-strip">
+
+    <div class="hotel-benefit-item">
+
+      <div class="hotel-benefit-icon">
+        🏨
+      </div>
+
+      <div>
+        <strong>
+          More ways to stay
+        </strong>
+
+        <span>
+          Hotels, resorts, apartments, villas, and more
+        </span>
       </div>
 
     </div>
+
+    <div class="hotel-benefit-item">
+
+      <div class="hotel-benefit-icon">
+        🌍
+      </div>
+
+      <div>
+        <strong>
+          Worldwide destinations
+        </strong>
+
+        <span>
+          Explore accommodations across popular cities
+        </span>
+      </div>
+
+    </div>
+
+    <div class="hotel-benefit-item">
+
+      <div class="hotel-benefit-icon">
+        🔒
+      </div>
+
+      <div>
+        <strong>
+          Secure checkout
+        </strong>
+
+        <span>
+          Complete your reservation with our travel partner
+        </span>
+      </div>
+
+    </div>
+
   </section>
 
-  <section class="why-travelpayouts">
-    <div class="why-grid">
+  <section class="featured-hotel-destinations">
 
-      <article class="why-card">
-        <span>🏨</span>
-        <h3>Hotels & Stays</h3>
+    <div class="hotel-section-heading">
+
+      <div>
+
+        <span class="hotel-section-eyebrow">
+          Explore the world
+        </span>
+
+        <h2>
+          Popular hotel destinations
+        </h2>
+
         <p>
-          Search accommodations available through Klook.
+          Start with one of these traveler-favorite destinations.
         </p>
+
+      </div>
+
+      <a href="#hotelPageSearchForm" class="hotel-section-link">
+        Search another destination →
+      </a>
+
+    </div>
+
+    <div class="hotel-destination-grid">
+
+      <article class="hotel-destination-card hotel-destination-large">
+
+        <img
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=85"
+          alt="Beautiful tropical beach in Hawaii"
+        />
+
+        <div class="hotel-destination-gradient"></div>
+
+        <div class="hotel-destination-content">
+
+          <span class="hotel-destination-tag">
+            Tropical escape
+          </span>
+
+          <h3>
+            Hawaii
+          </h3>
+
+          <p>
+            Beach resorts, oceanfront hotels, and island retreats.
+          </p>
+
+          <button
+            type="button"
+            onclick="searchDestination('Hawaii')"
+          >
+            Explore stays
+          </button>
+
+        </div>
+
       </article>
 
-      <article class="why-card">
-        <span>🔒</span>
-        <h3>Partner Checkout</h3>
-        <p>
-          Reservations and payments are completed securely on the partner’s
-          website.
-        </p>
+      <article class="hotel-destination-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1000&q=85"
+          alt="Las Vegas hotels and city lights"
+        />
+
+        <div class="hotel-destination-gradient"></div>
+
+        <div class="hotel-destination-content">
+
+          <span class="hotel-destination-tag">
+            Entertainment
+          </span>
+
+          <h3>
+            Las Vegas
+          </h3>
+
+          <button
+            type="button"
+            onclick="searchDestination('Las Vegas')"
+          >
+            Explore stays
+          </button>
+
+        </div>
+
       </article>
 
-      <article class="why-card">
-        <span>🌎</span>
-        <h3>Worldwide Destinations</h3>
-        <p>
-          Explore accommodations and travel experiences in destinations around
-          the world.
-        </p>
+      <article class="hotel-destination-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=1000&q=85"
+          alt="New York City skyline and buildings"
+        />
+
+        <div class="hotel-destination-gradient"></div>
+
+        <div class="hotel-destination-content">
+
+          <span class="hotel-destination-tag">
+            City adventure
+          </span>
+
+          <h3>
+            New York City
+          </h3>
+
+          <button
+            type="button"
+            onclick="searchDestination('New York City')"
+          >
+            Explore stays
+          </button>
+
+        </div>
+
+      </article>
+
+      <article class="hotel-destination-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=85"
+          alt="Bali temple and tropical scenery"
+        />
+
+        <div class="hotel-destination-gradient"></div>
+
+        <div class="hotel-destination-content">
+
+          <span class="hotel-destination-tag">
+            Island retreat
+          </span>
+
+          <h3>
+            Bali
+          </h3>
+
+          <button
+            type="button"
+            onclick="searchDestination('Bali')"
+          >
+            Explore stays
+          </button>
+
+        </div>
+
+      </article>
+
+      <article class="hotel-destination-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=85"
+          alt="Eiffel Tower and Paris cityscape"
+        />
+
+        <div class="hotel-destination-gradient"></div>
+
+        <div class="hotel-destination-content">
+
+          <span class="hotel-destination-tag">
+            Romantic getaway
+          </span>
+
+          <h3>
+            Paris
+          </h3>
+
+          <button
+            type="button"
+            onclick="searchDestination('Paris')"
+          >
+            Explore stays
+          </button>
+
+        </div>
+
       </article>
 
     </div>
+
   </section>
 
-  <section id="contact" class="contact-section">
-    <h2>Need help?</h2>
-    <p>Email us at support@sundaytraveldeals.com</p>
+  <section class="hotel-stay-types">
+
+    <div class="hotel-section-heading hotel-section-heading-centered">
+
+      <div>
+
+        <span class="hotel-section-eyebrow">
+          Find your style
+        </span>
+
+        <h2>
+          Choose the perfect kind of stay
+        </h2>
+
+        <p>
+          From quick city trips to relaxing resort vacations.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="hotel-stay-type-grid">
+
+      <article class="hotel-stay-type-card">
+
+        <span class="hotel-stay-type-icon">
+          🏨
+        </span>
+
+        <h3>
+          Hotels
+        </h3>
+
+        <p>
+          Comfortable stays in city centers and popular destinations.
+        </p>
+
+      </article>
+
+      <article class="hotel-stay-type-card">
+
+        <span class="hotel-stay-type-icon">
+          🌴
+        </span>
+
+        <h3>
+          Resorts
+        </h3>
+
+        <p>
+          Relaxing beachfront, spa, and all-inclusive experiences.
+        </p>
+
+      </article>
+
+      <article class="hotel-stay-type-card">
+
+        <span class="hotel-stay-type-icon">
+          🏙️
+        </span>
+
+        <h3>
+          Apartments
+        </h3>
+
+        <p>
+          Flexible accommodations for families and longer trips.
+        </p>
+
+      </article>
+
+      <article class="hotel-stay-type-card">
+
+        <span class="hotel-stay-type-icon">
+          🏡
+        </span>
+
+        <h3>
+          Villas
+        </h3>
+
+        <p>
+          Private stays with extra space, comfort, and privacy.
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="hotel-how-it-works">
+
+    <div class="hotel-how-content">
+
+      <span class="hotel-section-eyebrow">
+        Simple booking process
+      </span>
+
+      <h2>
+        How hotel search works
+      </h2>
+
+      <p>
+        Sunday Travel Deals helps you begin your accommodation search. Your
+        reservation, payment, availability, and final booking details are
+        handled securely by our approved travel partner.
+      </p>
+
+      <div class="hotel-step-list">
+
+        <div class="hotel-step">
+
+          <span class="hotel-step-number">
+            1
+          </span>
+
+          <div>
+            <h3>
+              Enter your trip details
+            </h3>
+
+            <p>
+              Choose your destination, dates, and number of travelers.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="hotel-step">
+
+          <span class="hotel-step-number">
+            2
+          </span>
+
+          <div>
+            <h3>
+              Continue to available stays
+            </h3>
+
+            <p>
+              We send you through our approved Travelpayouts affiliate link.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="hotel-step">
+
+          <span class="hotel-step-number">
+            3
+          </span>
+
+          <div>
+            <h3>
+              Complete your reservation
+            </h3>
+
+            <p>
+              Confirm your booking directly with the accommodation provider.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="hotel-how-image">
+
+      <img
+        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85"
+        alt="Luxury hotel pool and accommodation"
+      />
+
+      <div class="hotel-how-floating-card">
+
+        <span>
+          ⭐
+        </span>
+
+        <div>
+          <strong>
+            Find your next stay
+          </strong>
+
+          <small>
+            Search destinations worldwide
+          </small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="hotel-final-cta">
+
+    <div>
+
+      <span class="hotel-section-eyebrow">
+        Your next trip starts here
+      </span>
+
+      <h2>
+        Ready to find your perfect accommodation?
+      </h2>
+
+      <p>
+        Search hotels, resorts, apartments, and other stays for your next
+        destination.
+      </p>
+
+    </div>
+
+    <a href="#hotelPageSearchForm">
+      Search Hotels
+    </a>
+
+  </section>
+
+  <section class="hotel-support-section">
+
+    <span>
+      Need help with Sunday Travel Deals?
+    </span>
+
+    <a href="mailto:support@sundaytraveldeals.com">
+      support@sundaytraveldeals.com
+    </a>
+
   </section>
 
 </main>
@@ -156,45 +745,98 @@
   <div class="footer-top">
 
     <div class="footer-brand">
-      <h2>✈️ Sunday Travel Deals</h2>
+
+      <h2>
+        ✈️ Sunday Travel Deals
+      </h2>
 
       <p>
-        Discover accommodations and unforgettable travel experiences.
+        Discover hotel deals, flights, tours, cruises, and unforgettable travel
+        experiences.
       </p>
 
       <p class="footer-affiliate-note">
-        Sunday Travel Deals may earn a commission when you book through
-        selected partner links. Prices and availability are controlled by the
-        travel provider.
+        Sunday Travel Deals may earn a commission when visitors book through
+        selected partner links. Prices, availability, payments, cancellations,
+        and reservations are controlled by the travel provider.
       </p>
+
     </div>
 
     <div class="footer-links">
-      <h3>Explore</h3>
 
-      <a href="index.html">Home</a>
-      <a href="hotels.html">Hotels</a>
-      <a href="flights.html">Flights</a>
-      <a href="cars.html">Cars</a>
-      <a href="tours.html">Tours</a>
-      <a href="cruises.html">Cruises</a>
+      <h3>
+        Explore
+      </h3>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="hotels.html">
+        Hotels
+      </a>
+
+      <a href="flights.html">
+        Flights
+      </a>
+
+      <a href="cars.html">
+        Cars
+      </a>
+
+      <a href="tours.html">
+        Tours
+      </a>
+
+      <a href="cruises.html">
+        Cruises
+      </a>
+
     </div>
 
     <div class="footer-links">
-      <h3>Company</h3>
 
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+      <h3>
+        Company
+      </h3>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="privacy.html">
+        Privacy
+      </a>
+
+      <a href="terms.html">
+        Terms
+      </a>
+
     </div>
 
     <div class="footer-links">
-      <h3>Connect</h3>
 
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">YouTube</a>
+      <h3>
+        Connect
+      </h3>
+
+      <a href="#">
+        Facebook
+      </a>
+
+      <a href="#">
+        Instagram
+      </a>
+
+      <a href="#">
+        YouTube
+      </a>
+
     </div>
 
   </div>

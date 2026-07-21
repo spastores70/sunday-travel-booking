@@ -302,6 +302,92 @@ function searchHotelsPage(event) {
     guests
   );
 }
+/**
+ * Fills the hotel search with a featured destination
+ * and moves the visitor back to the search form.
+ */
+function searchDestination(destination) {
+  var destinationInput = document.getElementById('hDest');
+  var searchForm = document.getElementById('hotelPageSearchForm');
+
+  if (!destinationInput || !searchForm) {
+    console.error('Hotel destination search form was not found.');
+    return;
+  }
+
+  destinationInput.value = destination;
+
+  searchForm.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+
+  window.setTimeout(function () {
+    destinationInput.focus();
+  }, 500);
+}document.addEventListener('DOMContentLoaded', function () {
+  var checkInInput = document.getElementById('hCheckIn');
+  var checkOutInput = document.getElementById('hCheckOut');
+
+  if (!checkInInput || !checkOutInput) {
+    return;
+  }
+
+  var today = new Date();
+  var tomorrow = new Date(today);
+  var dayAfterTomorrow = new Date(today);
+
+  tomorrow.setDate(today.getDate() + 1);
+  dayAfterTomorrow.setDate(today.getDate() + 2);
+
+  var todayString = formatHotelDate(today);
+  var tomorrowString = formatHotelDate(tomorrow);
+  var dayAfterTomorrowString = formatHotelDate(dayAfterTomorrow);
+
+  checkInInput.min = todayString;
+  checkOutInput.min = tomorrowString;
+
+  if (!checkInInput.value) {
+    checkInInput.value = tomorrowString;
+  }
+
+  if (!checkOutInput.value) {
+    checkOutInput.value = dayAfterTomorrowString;
+  }
+
+  checkInInput.addEventListener('change', function () {
+    if (!checkInInput.value) {
+      return;
+    }
+
+    var selectedCheckIn = new Date(
+      checkInInput.value + 'T00:00:00'
+    );
+
+    selectedCheckIn.setDate(
+      selectedCheckIn.getDate() + 1
+    );
+
+    var minimumCheckout = formatHotelDate(selectedCheckIn);
+
+    checkOutInput.min = minimumCheckout;
+
+    if (
+      !checkOutInput.value ||
+      checkOutInput.value <= checkInInput.value
+    ) {
+      checkOutInput.value = minimumCheckout;
+    }
+  });
+});
+
+function formatHotelDate(date) {
+  var year = date.getFullYear();
+  var month = String(date.getMonth() + 1).padStart(2, '0');
+  var day = String(date.getDate()).padStart(2, '0');
+
+  return year + '-' + month + '-' + day;
+}
 
 // ── Flight search → Aviasales via Travelpayouts affiliate link ───────────────
 var TP_FLIGHT_BASE = 'https://tp.media/r?campaign_id=100&marker=738364&p=4114&trs=539166&u=';
