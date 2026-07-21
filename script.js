@@ -153,13 +153,13 @@ function buildKlookUrl(dest) {
 function searchHotels() {
   var dest = document.getElementById('hotelDest').value.trim();
   if (!dest) { alert('Please enter a destination.'); return; }
-  window.open(buildKlookUrl(dest), '_blank');
+  window.location.href = buildKlookUrl(dest);
 }
 
 function searchHotelsPage() {
   var dest = document.getElementById('hDest').value.trim();
   if (!dest) { alert('Please enter a destination.'); return; }
-  window.open(buildKlookUrl(dest), '_blank');
+  window.location.href = buildKlookUrl(dest);
 }
 
 // ── Flight search → Aviasales via Travelpayouts affiliate link ───────────────
