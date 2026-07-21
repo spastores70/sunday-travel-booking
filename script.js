@@ -145,21 +145,18 @@ function setSearchTab(type) {
 }
 
 // ── Hotel search → Klook via Travelpayouts affiliate link ────────────────────
-function buildKlookUrl(dest) {
-  var klookSearch = 'https://www.klook.com/en-US/search/?query=' + encodeURIComponent(dest + ' hotels');
-  return 'https://tp.media/r?campaign_id=137&marker=738364&p=4110&trs=539166&u=' + encodeURIComponent(klookSearch);
-}
+var TP_HOTEL_URL = 'https://tp.media/r?campaign_id=137&marker=738364&p=4110&trs=539166&u=https%3A%2F%2Fklook.com';
 
 function searchHotels() {
   var dest = document.getElementById('hotelDest').value.trim();
   if (!dest) { alert('Please enter a destination.'); return; }
-  window.location.href = buildKlookUrl(dest);
+  window.location.href = TP_HOTEL_URL;
 }
 
 function searchHotelsPage() {
   var dest = document.getElementById('hDest').value.trim();
   if (!dest) { alert('Please enter a destination.'); return; }
-  window.location.href = buildKlookUrl(dest);
+  window.location.href = TP_HOTEL_URL;
 }
 
 // ── Flight search → Aviasales via Travelpayouts affiliate link ───────────────
