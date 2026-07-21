@@ -144,7 +144,9 @@ function setSearchTab(type) {
   }
 }
 
-// ── Hotel search → Klook via Travelpayouts ───────────────────────────────────
+// ── Hotel search → Klook via Travelpayouts affiliate link ────────────────────
+var TP_HOTEL_BASE = 'https://tp.media/r?campaign_id=137&marker=738364&p=4110&trs=539166&u=';
+
 function searchHotels() {
   var dest     = document.getElementById('hotelDest').value.trim();
   var checkIn  = document.getElementById('checkIn').value;
@@ -153,14 +155,31 @@ function searchHotels() {
 
   if (!dest) { alert('Please enter a destination.'); return; }
 
-  var params = new URLSearchParams({ place_name: dest, adult: guests });
-  if (checkIn)  params.set('checkin', checkIn);
-  if (checkOut) params.set('checkout', checkOut);
+  var klookParams = new URLSearchParams({ place_name: dest, adult: guests });
+  if (checkIn)  klookParams.set('checkin', checkIn);
+  if (checkOut) klookParams.set('checkout', checkOut);
 
-  window.open('https://www.klook.com/en-US/hotels/list/?' + params.toString(), '_blank');
+  window.open(TP_HOTEL_BASE + encodeURIComponent('https://klook.com/en-US/hotels/list/?' + klookParams.toString()), '_blank');
 }
 
-// ── Flight search → Aviasales ─────────────────────────────────────────────────
+function searchHotelsPage() {
+  var dest     = document.getElementById('hDest').value.trim();
+  var checkIn  = document.getElementById('hCheckIn').value;
+  var checkOut = document.getElementById('hCheckOut').value;
+  var guests   = document.getElementById('hGuests').value;
+
+  if (!dest) { alert('Please enter a destination.'); return; }
+
+  var klookParams = new URLSearchParams({ place_name: dest, adult: guests });
+  if (checkIn)  klookParams.set('checkin', checkIn);
+  if (checkOut) klookParams.set('checkout', checkOut);
+
+  window.open(TP_HOTEL_BASE + encodeURIComponent('https://klook.com/en-US/hotels/list/?' + klookParams.toString()), '_blank');
+}
+
+// ── Flight search → Aviasales via Travelpayouts affiliate link ───────────────
+var TP_FLIGHT_BASE = 'https://tp.media/r?campaign_id=100&marker=738364&p=4114&trs=539166&u=';
+
 function searchFlights() {
   var from       = document.getElementById('flightFrom').value.trim();
   var to         = document.getElementById('flightTo').value.trim();
@@ -170,30 +189,13 @@ function searchFlights() {
 
   if (!from || !to) { alert('Please enter origin and destination.'); return; }
 
-  var params = new URLSearchParams({ origin: from, destination: to, adults: pax, marker: TP_MARKER });
-  if (depart)     params.set('depart_date', depart);
-  if (returnDate) params.set('return_date', returnDate);
+  var aviasalesParams = new URLSearchParams({ origin: from, destination: to, adults: pax });
+  if (depart)     aviasalesParams.set('depart_date', depart);
+  if (returnDate) aviasalesParams.set('return_date', returnDate);
 
-  window.open('https://www.aviasales.com/search?' + params.toString(), '_blank');
+  window.open(TP_FLIGHT_BASE + encodeURIComponent('https://aviasales.com/search?' + aviasalesParams.toString()), '_blank');
 }
 
-// ── Hotels page search form → Klook via Travelpayouts ────────────────────────
-function searchHotelsPage() {
-  var dest     = document.getElementById('hDest').value.trim();
-  var checkIn  = document.getElementById('hCheckIn').value;
-  var checkOut = document.getElementById('hCheckOut').value;
-  var guests   = document.getElementById('hGuests').value;
-
-  if (!dest) { alert('Please enter a destination.'); return; }
-
-  var params = new URLSearchParams({ place_name: dest, adult: guests });
-  if (checkIn)  params.set('checkin', checkIn);
-  if (checkOut) params.set('checkout', checkOut);
-
-  window.open('https://www.klook.com/en-US/hotels/list/?' + params.toString(), '_blank');
-}
-
-// ── Flights page search form ───────────────────────────────────────────────────
 function searchFlightsPage() {
   var from       = document.getElementById('fFrom').value.trim();
   var to         = document.getElementById('fTo').value.trim();
@@ -203,11 +205,11 @@ function searchFlightsPage() {
 
   if (!from || !to) { alert('Please enter origin and destination.'); return; }
 
-  var params = new URLSearchParams({ origin: from, destination: to, adults: pax, marker: TP_MARKER });
-  if (depart)     params.set('depart_date', depart);
-  if (returnDate) params.set('return_date', returnDate);
+  var aviasalesParams = new URLSearchParams({ origin: from, destination: to, adults: pax });
+  if (depart)     aviasalesParams.set('depart_date', depart);
+  if (returnDate) aviasalesParams.set('return_date', returnDate);
 
-  window.open('https://www.aviasales.com/search?' + params.toString(), '_blank');
+  window.open(TP_FLIGHT_BASE + encodeURIComponent('https://aviasales.com/search?' + aviasalesParams.toString()), '_blank');
 }
 
 // ── Car search → RentalCars / Discover Cars ───────────────────────────────────
