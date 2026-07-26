@@ -106,30 +106,6 @@ nav {
   margin: 18px 0 35px;
 }
 
-.glass-search {
-  width: 90%;
-  max-width: 1050px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr auto;
-  gap: 12px;
-  padding: 20px;
-  border-radius: 25px;
-  background: rgba(255,255,255,.22);
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,.4);
-  box-shadow: 0 25px 60px rgba(0,0,0,.25);
-}
-
-.glass-search input,
-.glass-search select,
-.glass-search button {
-  padding: 16px;
-  border-radius: 15px;
-  border: none;
-}
-
-.glass-search button,
 .login-btn {
   background: linear-gradient(90deg, #ff4d79, #ffb000);
   color: white;
@@ -137,14 +113,14 @@ nav {
   cursor: pointer;
 }
 
-.glass-search-btns {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.hero-categories-grid {
+  width: 100%;
+  max-width: 1100px;
 }
 
-.glass-search-btns button {
-  white-space: nowrap;
+.hero-categories-grid .premium-category-card {
+  min-height: 200px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.35);
 }
 
 
@@ -329,10 +305,6 @@ nav {
 
   .hero-content h1 {
     font-size: 40px;
-  }
-
-  .glass-search {
-    grid-template-columns: 1fr;
   }
 
   .menu a {
@@ -925,36 +897,6 @@ height:250px;
 
 }
 
-/* ── Search tabs ─────────────────────────────────────────────────────────────── */
-.search-tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.tab-btn {
-  padding: 11px 32px;
-  border-radius: 30px;
-  border: 2px solid rgba(255,255,255,.55);
-  background: transparent;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 15px;
-  transition: background .2s, border-color .2s;
-}
-
-.tab-btn.active,
-.tab-btn:hover {
-  background: rgba(255,255,255,.28);
-  border-color: white;
-}
-
-.glass-search--flights {
-  display: none;
-  grid-template-columns: 1.5fr 1.5fr 1fr 1fr auto;
-}
-
 /* ── Deal cards as links ──────────────────────────────────────────────────────── */
 a.deal-card {
   text-decoration: none;
@@ -1061,48 +1003,9 @@ a.deal-card:hover {
   .flights-hero-content h1 {
     font-size: 38px;
   }
-
-  .glass-search--flights {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ── Category tiles (homepage) ──────────────────────────────────────────────── */
-.premium-categories-section {
-  padding: 100px 7%;
-  background: #ffffff;
-}
-
-.premium-categories-heading {
-  max-width: 1280px;
-  margin: 0 auto 40px;
-}
-
-.premium-categories-heading > span {
-  color: #0866d9;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.premium-categories-heading h2 {
-  max-width: 850px;
-  margin: 9px 0 0;
-  font-size: clamp(32px, 4.5vw, 46px);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  color: #13213d;
-}
-
-.premium-categories-heading p {
-  max-width: 700px;
-  margin: 12px 0 0;
-  color: #667085;
-  font-size: 16px;
-  line-height: 1.7;
-}
-
 .premium-categories-grid {
   max-width: 1280px;
   margin: 0 auto;
@@ -1619,33 +1522,9 @@ a.deal-card:hover {
     margin: 10px 0 18px;
   }
 
-  /* ── Search tabs ── */
-  .search-tabs {
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 14px;
-  }
-
-  .tab-btn {
-    padding: 10px 22px;
-    font-size: 14px;
-  }
-
-  /* ── Search form ── */
-  .glass-search {
-    grid-template-columns: 1fr;
-    width: 92%;
-    padding: 16px;
-    gap: 10px;
-    border-radius: 18px;
-  }
-
-  .glass-search input,
-  .glass-search select,
-  .glass-search button {
-    padding: 14px 16px;
-    font-size: 15px;
-    border-radius: 12px;
+  /* ── Hero categories ── */
+  .hero-categories-grid .premium-category-card {
+    min-height: 160px;
   }
 
   /* ── Deals ── */
@@ -1744,10 +1623,6 @@ a.deal-card:hover {
   }
 
   /* ── Category tiles ── */
-  .premium-categories-section {
-    padding: 70px 5%;
-  }
-
   .premium-categories-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1811,16 +1686,6 @@ a.deal-card:hover {
 
   .premium-categories-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .glass-search {
-    width: 96%;
-    padding: 12px;
-  }
-
-  .tab-btn {
-    padding: 9px 16px;
-    font-size: 13px;
   }
 
   .deal-card {

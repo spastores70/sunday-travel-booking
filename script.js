@@ -122,28 +122,6 @@ function moveSlide(direction) {
   track.scrollLeft += direction * 330;
 }
 
-// ── Homepage search tabs ──────────────────────────────────────────────────────
-function setSearchTab(type) {
-  var hotelSearch = document.getElementById('hotelSearch');
-  var flightSearch = document.getElementById('flightSearch');
-  var tabHotels = document.getElementById('tab-hotels');
-  var tabFlights = document.getElementById('tab-flights');
-
-  if (!hotelSearch || !flightSearch) return;
-
-  if (type === 'hotels') {
-    hotelSearch.style.display = 'grid';
-    flightSearch.style.display = 'none';
-    tabHotels.classList.add('active');
-    tabFlights.classList.remove('active');
-  } else {
-    hotelSearch.style.display = 'none';
-    flightSearch.style.display = 'grid';
-    tabFlights.classList.add('active');
-    tabHotels.classList.remove('active');
-  }
-}
-
 // ── Hotel search → Klook via Travelpayouts affiliate link ────────────────────
 var TP_HOTEL_URL = 'https://tp.media/r?campaign_id=137&marker=738364&p=4110&trs=539166&u=https%3A%2F%2Fklook.com';
 
@@ -238,41 +216,6 @@ function openBookingHotelSearch(destination, checkIn, checkOut, guests) {
   var affiliateUrl = CJ_BOOKING_URL + encodeURIComponent(bookingUrl.toString());
 
   window.open(affiliateUrl, '_blank', 'noopener,noreferrer');
-}
-
-/**
- * Homepage hotel search. provider is 'klook' (default) or 'booking'.
- */
-function searchHotels(provider) {
-  var destinationInput = document.getElementById('hotelDest');
-  var checkInInput = document.getElementById('checkIn');
-  var checkOutInput = document.getElementById('checkOut');
-  var guestsInput = document.getElementById('guests');
-
-  if (
-    !destinationInput ||
-    !checkInInput ||
-    !checkOutInput ||
-    !guestsInput
-  ) {
-    console.error('Homepage hotel search fields were not found.');
-    return;
-  }
-
-  var destination = destinationInput.value.trim();
-  var checkIn = checkInInput.value;
-  var checkOut = checkOutInput.value;
-  var guests = guestsInput.value;
-
-  if (!validateHotelSearch(destination, checkIn, checkOut)) {
-    return;
-  }
-
-  if (provider === 'booking') {
-    openBookingHotelSearch(destination, checkIn, checkOut, guests);
-  } else {
-    openKlookHotelSearch(destination, checkIn, checkOut, guests);
-  }
 }
 
 /**
@@ -433,27 +376,6 @@ function openBookingFlightSearch(from, to, depart, returnDate, pax) {
   var affiliateUrl = CJ_BOOKING_URL + encodeURIComponent(bookingFlightUrl.toString());
 
   window.open(affiliateUrl, '_blank', 'noopener,noreferrer');
-}
-
-function searchFlights(provider) {
-  var from       = document.getElementById('flightFrom').value.trim();
-  var to         = document.getElementById('flightTo').value.trim();
-  var depart     = document.getElementById('departDate').value;
-  var returnDate = document.getElementById('returnDate').value;
-  var pax        = document.getElementById('passengers').value;
-
-  if (!from || !to) { alert('Please enter origin and destination.'); return; }
-
-  if (provider === 'booking') {
-    openBookingFlightSearch(from, to, depart, returnDate, pax);
-    return;
-  }
-
-  var aviasalesParams = new URLSearchParams({ origin: from, destination: to, adults: pax });
-  if (depart)     aviasalesParams.set('depart_date', depart);
-  if (returnDate) aviasalesParams.set('return_date', returnDate);
-
-  window.open(TP_FLIGHT_BASE + encodeURIComponent('https://aviasales.com/search?' + aviasalesParams.toString()), '_blank');
 }
 
 function searchFlightsPage(provider) {

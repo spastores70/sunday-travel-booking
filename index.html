@@ -42,107 +42,61 @@
     <h1>Explore The World For Less</h1>
     <p>Search hotels, flights, cars, tours and more in one beautiful place.</p>
 
-    <div class="search-tabs">
-      <button type="button" class="tab-btn active" id="tab-hotels" onclick="setSearchTab('hotels')">🏨 Hotels</button>
-      <button type="button" class="tab-btn" id="tab-flights" onclick="setSearchTab('flights')">✈️ Flights</button>
-    </div>
+    <div class="premium-categories-grid hero-categories-grid">
 
-    <div class="glass-search" id="hotelSearch">
-      <input type="text"  id="hotelDest"  placeholder="Where are you going?" />
-      <input type="date"  id="checkIn"    title="Check-in date" />
-      <input type="date"  id="checkOut"   title="Check-out date" />
-      <select id="guests" title="Number of guests">
-        <option value="1">1 Guest</option>
-        <option value="2">2 Guests</option>
-        <option value="3">3 Guests</option>
-        <option value="4">4 Guests</option>
-      </select>
-      <div class="glass-search-btns">
-        <button type="button" onclick="searchHotels('klook')">Search on Klook</button>
-        <button type="button" onclick="searchHotels('booking')">Search on Booking.com</button>
-      </div>
-    </div>
+      <a class="premium-category-card" href="hotels.html">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Hotel pool and resort" />
+        <span class="premium-category-overlay"></span>
+        <span class="premium-category-icon">🏨</span>
+        <span class="premium-category-body">
+          <strong>Hotels</strong>
+          <small>Stays worldwide</small>
+        </span>
+      </a>
 
-    <div class="glass-search glass-search--flights" id="flightSearch">
-      <input type="text" id="flightFrom"  placeholder="From (city or airport)" />
-      <input type="text" id="flightTo"    placeholder="To (city or airport)" />
-      <input type="date" id="departDate"  title="Departure date" />
-      <input type="date" id="returnDate"  title="Return date (leave blank for one-way)" />
-      <select id="passengers" title="Number of passengers">
-        <option value="1">1 Passenger</option>
-        <option value="2">2 Passengers</option>
-        <option value="3">3 Passengers</option>
-        <option value="4">4 Passengers</option>
-      </select>
-      <div class="glass-search-btns">
-        <button type="button" onclick="searchFlights('aviasales')">Search on Aviasales</button>
-        <button type="button" onclick="searchFlights('booking')">Search on Booking.com</button>
-      </div>
+      <a class="premium-category-card" href="flights.html">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Airplane wing above the clouds" />
+        <span class="premium-category-overlay"></span>
+        <span class="premium-category-icon">✈️</span>
+        <span class="premium-category-body">
+          <strong>Flights</strong>
+          <small>Every route, every airline</small>
+        </span>
+      </a>
+
+      <a class="premium-category-card" href="cars.html">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Rental car ready for the road" />
+        <span class="premium-category-overlay"></span>
+        <span class="premium-category-icon">🚗</span>
+        <span class="premium-category-body">
+          <strong>Cars &amp; Bikes</strong>
+          <small>Airport &amp; city pickups</small>
+        </span>
+      </a>
+
+      <a class="premium-category-card" href="tours.html">
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali temple and tropical scenery" />
+        <span class="premium-category-overlay"></span>
+        <span class="premium-category-icon">🎭</span>
+        <span class="premium-category-body">
+          <strong>Tours &amp; Activities</strong>
+          <small>300,000+ experiences</small>
+        </span>
+      </a>
+
+      <a class="premium-category-card" href="cruises.html">
+        <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=800&q=80" alt="Caribbean turquoise waters" />
+        <span class="premium-category-overlay"></span>
+        <span class="premium-category-icon">🚢</span>
+        <span class="premium-category-body">
+          <strong>Cruises</strong>
+          <small>All major cruise lines</small>
+        </span>
+      </a>
+
     </div>
   </div>
 </header>
-
-<!-- Category tiles -->
-<section class="premium-categories-section">
-  <div class="premium-categories-heading">
-    <span>Where to next?</span>
-    <h2>Browse by category</h2>
-    <p>Everything you need for the perfect trip — all in one place.</p>
-  </div>
-  <div class="premium-categories-grid">
-
-    <a class="premium-category-card" href="hotels.html">
-      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Hotel pool and resort" />
-      <span class="premium-category-overlay"></span>
-      <span class="premium-category-icon">🏨</span>
-      <span class="premium-category-body">
-        <strong>Hotels</strong>
-        <small>Stays worldwide</small>
-      </span>
-    </a>
-
-    <a class="premium-category-card" href="flights.html">
-      <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Airplane wing above the clouds" />
-      <span class="premium-category-overlay"></span>
-      <span class="premium-category-icon">✈️</span>
-      <span class="premium-category-body">
-        <strong>Flights</strong>
-        <small>Every route, every airline</small>
-      </span>
-    </a>
-
-    <a class="premium-category-card" href="cars.html">
-      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Rental car ready for the road" />
-      <span class="premium-category-overlay"></span>
-      <span class="premium-category-icon">🚗</span>
-      <span class="premium-category-body">
-        <strong>Cars &amp; Bikes</strong>
-        <small>Airport &amp; city pickups</small>
-      </span>
-    </a>
-
-    <a class="premium-category-card" href="tours.html">
-      <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali temple and tropical scenery" />
-      <span class="premium-category-overlay"></span>
-      <span class="premium-category-icon">🎭</span>
-      <span class="premium-category-body">
-        <strong>Tours &amp; Activities</strong>
-        <small>300,000+ experiences</small>
-      </span>
-    </a>
-
-    <a class="premium-category-card" href="cruises.html">
-      <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=800&q=80" alt="Caribbean turquoise waters" />
-      <span class="premium-category-overlay"></span>
-      <span class="premium-category-icon">🚢</span>
-      <span class="premium-category-body">
-        <strong>Cruises</strong>
-        <small>All major cruise lines</small>
-      </span>
-    </a>
-
-  </div>
-</section>
 
 <!-- Hotel deal cards -->
 <section id="deals" class="deals">
