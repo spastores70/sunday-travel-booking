@@ -2,137 +2,1445 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Car & Bike Rentals | Sunday Travel Deals</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Search rental cars for airports, cities, road trips, and business travel with Sunday Travel Deals."
+  />
+
+  <title>Rental Cars | Sunday Travel Deals</title>
+
   <link rel="stylesheet" href="styles.css" />
-  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://emrldtp.cc/NTM5MTY2.js?t=539166';
-      document.head.appendChild(script);
-  })();
-  </script>
-  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.type = "module";
-      script.src = "https://tpwgts.com/wl_web/main.js?wl_id=18915";
-      document.head.appendChild(script);
-  })();
-  </script>
+
+  <script
+    src="https://emrldtp.cc/NTM5MTY2.js?t=539166"
+    async
+  ></script>
 </head>
-<body>
 
-<header class="cars-hero">
-  <nav>
-    <div class="logo"><img src="logo.png" alt="Sunday Travel Deals"></div>
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="hotels.html">Hotels</a>
-      <a href="flights.html">Flights</a>
-      <a href="cars.html">Cars</a>
-      <a href="tours.html">Tours</a>
-      <a href="cruises.html">Cruises</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy</a>
-    </div>
-    <button type="button" class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
-  </nav>
-  <div class="cars-hero-content">
-    <h1>Car &amp; Bike Rentals</h1>
-    <p>Find the best wheels for your trip — powered by Discover Cars.</p>
-  </div>
-</header>
+<body class="professional-cars-page">
 
-<section class="cars-widget-section">
-  <div class="cars-widget-box">
+  <!-- =====================================================
+       PREMIUM CAR RENTAL HERO
+  ====================================================== -->
 
-    <!--
-      OPTION A — Travelpayouts Discover Cars Widget
-      Replace YOUR_MARKER with your Travelpayouts marker ID
-    -->
-    <script
-      src="https://c.travelpayouts.com/widgetbox?type=cars_search_form&host=www.discovercars.com&uuid=YOUR_MARKER&locale=en&currency=usd&powered_by=true"
-      charset="utf-8">
-    </script>
+  <header class="premium-car-hero">
 
-    <!--
-      OPTION B — Use the form below while you set up your marker.
-      It redirects to RentalCars.com (works worldwide, no account needed).
-      Delete this block once the widget above is live.
-    -->
-    <div class="fallback-search">
-      <h3>Search Car Rentals</h3>
-      <div class="car-search-form">
-        <input type="text"  id="carPickup"      placeholder="Pickup location (city or airport)" />
-        <input type="date"  id="carPickupDate"  />
-        <input type="date"  id="carReturnDate"  />
-        <button type="button" onclick="searchCars()">Find Cars</button>
+    <div class="premium-car-hero-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="premium-car-nav">
+
+      <a
+        href="index.html"
+        class="logo premium-car-logo"
+        aria-label="Sunday Travel Deals home"
+      >
+        <span class="premium-car-logo-icon">✈️</span>
+
+        <span>
+          Sunday Travel Deals
+        </span>
+      </a>
+
+      <div class="menu">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="hotels.html">
+          Hotels
+        </a>
+
+        <a href="flights.html">
+          Flights
+        </a>
+
+        <a href="cars.html" class="active">
+          Cars
+        </a>
+
+        <a href="tours.html">
+          Tours
+        </a>
+
+        <a href="cruises.html">
+          Cruises
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <button
+          type="button"
+          onclick="openModal()"
+        >
+          Login / Sign Up
+        </button>
+
       </div>
-      <p class="search-note">Also searching for a <strong>bike or scooter</strong>? Try local rental shops or apps like Lime and Bird at your destination.</p>
+
+      <button
+        type="button"
+        class="hamburger"
+        id="hamburger"
+        onclick="toggleMenu()"
+        aria-label="Open navigation menu"
+      >
+        &#9776;
+      </button>
+
+    </nav>
+
+    <!-- Hero content -->
+    <div class="premium-car-hero-content">
+
+      <div class="premium-car-hero-copy">
+
+        <span class="premium-car-eyebrow">
+          Flexible travel starts here
+        </span>
+
+        <h1>
+          Find the right rental car for every journey
+        </h1>
+
+        <p>
+          Search rental vehicles for airport pickups, city trips, family
+          vacations, business travel, and weekend road adventures.
+        </p>
+
+        <div class="premium-car-hero-highlights">
+
+          <span>
+            ✓ Airport and city locations
+          </span>
+
+          <span>
+            ✓ Multiple vehicle categories
+          </span>
+
+          <span>
+            ✓ Secure partner booking
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- Search card -->
+      <div
+        class="premium-car-search-card"
+        id="car-search"
+      >
+
+        <div class="premium-car-search-heading">
+
+          <div class="premium-car-search-icon">
+            🚘
+          </div>
+
+          <div>
+
+            <span>
+              Car rental search
+            </span>
+
+            <h2>
+              Where will you pick up your car?
+            </h2>
+
+          </div>
+
+        </div>
+
+        <form
+          class="premium-car-search-form"
+          onsubmit="event.preventDefault(); searchCars();"
+        >
+
+          <div class="premium-car-field premium-car-location-field">
+
+            <label for="carPickup">
+              Pickup location
+            </label>
+
+            <div class="premium-car-input-wrap">
+
+              <span>
+                📍
+              </span>
+
+              <input
+                type="text"
+                id="carPickup"
+                placeholder="Airport, city, or neighborhood"
+                autocomplete="off"
+                required
+              />
+
+            </div>
+
+          </div>
+
+          <div class="premium-car-field">
+
+            <label for="carPickupDate">
+              Pickup date
+            </label>
+
+            <div class="premium-car-input-wrap">
+
+              <span>
+                📅
+              </span>
+
+              <input
+                type="date"
+                id="carPickupDate"
+                required
+              />
+
+            </div>
+
+          </div>
+
+          <div class="premium-car-field">
+
+            <label for="carReturnDate">
+              Return date
+            </label>
+
+            <div class="premium-car-input-wrap">
+
+              <span>
+                📅
+              </span>
+
+              <input
+                type="date"
+                id="carReturnDate"
+                required
+              />
+
+            </div>
+
+          </div>
+
+          <button
+            type="submit"
+            class="premium-car-search-button"
+          >
+            <span>
+              🔎
+            </span>
+
+            Search Rental Cars
+          </button>
+
+        </form>
+
+        <div class="premium-car-search-note">
+
+          <span>
+            🔒
+          </span>
+
+          <p>
+            Search results and final reservations are completed securely through
+            the selected rental-car provider.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         BENEFIT STRIP
+    ====================================================== -->
+
+    <section class="premium-car-benefits">
+
+      <article>
+
+        <span class="premium-car-benefit-icon">
+          🛬
+        </span>
+
+        <div>
+
+          <h3>
+            Airport pickups
+          </h3>
+
+          <p>
+            Search convenient rental locations near major airports and travel
+            hubs.
+          </p>
+
+        </div>
+
+      </article>
+
+      <article>
+
+        <span class="premium-car-benefit-icon">
+          🚗
+        </span>
+
+        <div>
+
+          <h3>
+            Vehicle variety
+          </h3>
+
+          <p>
+            Find economy cars, family SUVs, premium vehicles, vans, and more.
+          </p>
+
+        </div>
+
+      </article>
+
+      <article>
+
+        <span class="premium-car-benefit-icon">
+          🛣️
+        </span>
+
+        <div>
+
+          <h3>
+            Travel your way
+          </h3>
+
+          <p>
+            Enjoy the flexibility to explore destinations on your own schedule.
+          </p>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- =====================================================
+         VEHICLE CATEGORIES
+    ====================================================== -->
+
+    <section class="premium-car-categories-section">
+
+      <div class="premium-car-section-heading">
+
+        <span>
+          Choose your ride
+        </span>
+
+        <h2>
+          A vehicle for every type of trip
+        </h2>
+
+        <p>
+          Whether you need something affordable, spacious, comfortable, or
+          memorable, begin your search with the category that fits your plans.
+        </p>
+
+      </div>
+
+      <div class="premium-car-categories-grid">
+
+        <!-- Economy -->
+        <article class="premium-car-category-card">
+
+          <div class="premium-car-category-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=85"
+              alt="Compact economy rental car"
+            />
+
+            <span>
+              Budget friendly
+            </span>
+
+          </div>
+
+          <div class="premium-car-category-content">
+
+            <div class="premium-car-category-title">
+
+              <div>
+
+                <small>
+                  Easy city driving
+                </small>
+
+                <h3>
+                  Economy Cars
+                </h3>
+
+              </div>
+
+              <span>
+                🚗
+              </span>
+
+            </div>
+
+            <p>
+              A practical choice for solo travelers, couples, and shorter trips.
+            </p>
+
+            <div class="premium-car-category-features">
+
+              <span>
+                Up to 4 passengers
+              </span>
+
+              <span>
+                Fuel efficient
+              </span>
+
+            </div>
+
+            <button
+              type="button"
+              onclick="chooseCarLocation('Dallas Fort Worth International Airport')"
+            >
+              Start Search
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- SUV -->
+        <article class="premium-car-category-card">
+
+          <div class="premium-car-category-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=85"
+              alt="SUV rental vehicle"
+            />
+
+            <span>
+              Family favorite
+            </span>
+
+          </div>
+
+          <div class="premium-car-category-content">
+
+            <div class="premium-car-category-title">
+
+              <div>
+
+                <small>
+                  Space and comfort
+                </small>
+
+                <h3>
+                  SUVs
+                </h3>
+
+              </div>
+
+              <span>
+                🚙
+              </span>
+
+            </div>
+
+            <p>
+              Extra room for passengers, luggage, family vacations, and road
+              trips.
+            </p>
+
+            <div class="premium-car-category-features">
+
+              <span>
+                Up to 7 passengers
+              </span>
+
+              <span>
+                More luggage space
+              </span>
+
+            </div>
+
+            <button
+              type="button"
+              onclick="chooseCarLocation('Orlando International Airport')"
+            >
+              Start Search
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- Luxury -->
+        <article class="premium-car-category-card">
+
+          <div class="premium-car-category-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85"
+              alt="Luxury rental car"
+            />
+
+            <span>
+              Premium experience
+            </span>
+
+          </div>
+
+          <div class="premium-car-category-content">
+
+            <div class="premium-car-category-title">
+
+              <div>
+
+                <small>
+                  Elevated travel
+                </small>
+
+                <h3>
+                  Premium Cars
+                </h3>
+
+              </div>
+
+              <span>
+                ✨
+              </span>
+
+            </div>
+
+            <p>
+              Add style, comfort, and performance to business trips and special
+              occasions.
+            </p>
+
+            <div class="premium-car-category-features">
+
+              <span>
+                Luxury interiors
+              </span>
+
+              <span>
+                Premium models
+              </span>
+
+            </div>
+
+            <button
+              type="button"
+              onclick="chooseCarLocation('Las Vegas Harry Reid International Airport')"
+            >
+              Start Search
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- Van -->
+        <article class="premium-car-category-card">
+
+          <div class="premium-car-category-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1566008885218-90abf9200ddb?auto=format&fit=crop&w=1000&q=85"
+              alt="Passenger van on a scenic road"
+            />
+
+            <span>
+              Group travel
+            </span>
+
+          </div>
+
+          <div class="premium-car-category-content">
+
+            <div class="premium-car-category-title">
+
+              <div>
+
+                <small>
+                  Room for everyone
+                </small>
+
+                <h3>
+                  Vans and Minivans
+                </h3>
+
+              </div>
+
+              <span>
+                🚐
+              </span>
+
+            </div>
+
+            <p>
+              A comfortable option for larger families, groups, and extra
+              luggage.
+            </p>
+
+            <div class="premium-car-category-features">
+
+              <span>
+                Up to 8 passengers
+              </span>
+
+              <span>
+                Flexible seating
+              </span>
+
+            </div>
+
+            <button
+              type="button"
+              onclick="chooseCarLocation('Los Angeles International Airport')"
+            >
+              Start Search
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         POPULAR PICKUP LOCATIONS
+    ====================================================== -->
+
+    <section class="premium-car-locations-section">
+
+      <div class="premium-car-section-heading premium-car-light-heading">
+
+        <span>
+          Popular pickup locations
+        </span>
+
+        <h2>
+          Begin your drive from a major travel destination
+        </h2>
+
+        <p>
+          Select a popular location below to fill the search form automatically.
+          You can change it at any time.
+        </p>
+
+      </div>
+
+      <div class="premium-car-locations-grid">
+
+        <button
+          type="button"
+          class="premium-car-location-card"
+          onclick="chooseCarLocation('Dallas Fort Worth International Airport')"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=85"
+            alt="Dallas Texas skyline"
+          />
+
+          <span class="premium-car-location-overlay"></span>
+
+          <span class="premium-car-location-content">
+
+            <small>
+              Texas
+            </small>
+
+            <strong>
+              Dallas–Fort Worth
+            </strong>
+
+            <em>
+              Search cars →
+            </em>
+
+          </span>
+
+        </button>
+
+        <button
+          type="button"
+          class="premium-car-location-card"
+          onclick="chooseCarLocation('Orlando International Airport')"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1597466599360-3b9775841aec?auto=format&fit=crop&w=900&q=85"
+            alt="Orlando Florida travel destination"
+          />
+
+          <span class="premium-car-location-overlay"></span>
+
+          <span class="premium-car-location-content">
+
+            <small>
+              Florida
+            </small>
+
+            <strong>
+              Orlando
+            </strong>
+
+            <em>
+              Search cars →
+            </em>
+
+          </span>
+
+        </button>
+
+        <button
+          type="button"
+          class="premium-car-location-card"
+          onclick="chooseCarLocation('Los Angeles International Airport')"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?auto=format&fit=crop&w=900&q=85"
+            alt="Los Angeles California"
+          />
+
+          <span class="premium-car-location-overlay"></span>
+
+          <span class="premium-car-location-content">
+
+            <small>
+              California
+            </small>
+
+            <strong>
+              Los Angeles
+            </strong>
+
+            <em>
+              Search cars →
+            </em>
+
+          </span>
+
+        </button>
+
+        <button
+          type="button"
+          class="premium-car-location-card"
+          onclick="chooseCarLocation('Miami International Airport')"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1535498730771-e735b998cd64?auto=format&fit=crop&w=900&q=85"
+            alt="Miami Florida waterfront"
+          />
+
+          <span class="premium-car-location-overlay"></span>
+
+          <span class="premium-car-location-content">
+
+            <small>
+              Florida
+            </small>
+
+            <strong>
+              Miami
+            </strong>
+
+            <em>
+              Search cars →
+            </em>
+
+          </span>
+
+        </button>
+
+        <button
+          type="button"
+          class="premium-car-location-card"
+          onclick="chooseCarLocation('Harry Reid International Airport Las Vegas')"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1605833556294-ea5c7a74f57d?auto=format&fit=crop&w=900&q=85"
+            alt="Las Vegas Nevada"
+          />
+
+          <span class="premium-car-location-overlay"></span>
+
+          <span class="premium-car-location-content">
+
+            <small>
+              Nevada
+            </small>
+
+            <strong>
+              Las Vegas
+            </strong>
+
+            <em>
+              Search cars →
+            </em>
+
+          </span>
+
+        </button>
+
+        <button
+          type="button"
+          class="premium-car-location-card"
+          onclick="chooseCarLocation('Denver International Airport')"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1546156929-a4c0ac411f47?auto=format&fit=crop&w=900&q=85"
+            alt="Denver Colorado mountains"
+          />
+
+          <span class="premium-car-location-overlay"></span>
+
+          <span class="premium-car-location-content">
+
+            <small>
+              Colorado
+            </small>
+
+            <strong>
+              Denver
+            </strong>
+
+            <em>
+              Search cars →
+            </em>
+
+          </span>
+
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         HOW IT WORKS
+    ====================================================== -->
+
+    <section class="premium-car-process-section">
+
+      <div class="premium-car-process-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1484318571209-661cf29a69c3?auto=format&fit=crop&w=1500&q=90"
+          alt="Car traveling through a scenic mountain road"
+        />
+
+        <div class="premium-car-floating-card">
+
+          <span>
+            🛣️
+          </span>
+
+          <div>
+
+            <strong>
+              Your road trip begins here
+            </strong>
+
+            <small>
+              Search, select, and drive
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="premium-car-process-content">
+
+        <span class="premium-car-section-label">
+          Simple rental-car search
+        </span>
+
+        <h2>
+          Find your vehicle in three easy steps
+        </h2>
+
+        <p>
+          Sunday Travel Deals helps you start the search, then connects you with
+          the provider responsible for availability, payment, confirmation, and
+          customer service.
+        </p>
+
+        <div class="premium-car-steps">
+
+          <article>
+
+            <span>
+              1
+            </span>
+
+            <div>
+
+              <h3>
+                Enter your pickup location
+              </h3>
+
+              <p>
+                Search by airport, city, neighborhood, or another convenient
+                location.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span>
+              2
+            </span>
+
+            <div>
+
+              <h3>
+                Select your rental dates
+              </h3>
+
+              <p>
+                Choose when you plan to pick up and return the vehicle.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span>
+              3
+            </span>
+
+            <div>
+
+              <h3>
+                Review available vehicles
+              </h3>
+
+              <p>
+                Compare available options and complete the reservation through
+                the selected provider.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <a
+          href="#car-search"
+          class="premium-car-process-button"
+        >
+          Search Rental Cars
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         HELPFUL TIPS
+    ====================================================== -->
+
+    <section class="premium-car-tips-section">
+
+      <div class="premium-car-section-heading">
+
+        <span>
+          Before you reserve
+        </span>
+
+        <h2>
+          Helpful rental-car reminders
+        </h2>
+
+        <p>
+          Rental conditions vary by location and provider. Review the complete
+          terms before finalizing your reservation.
+        </p>
+
+      </div>
+
+      <div class="premium-car-tips-grid">
+
+        <article>
+
+          <span>
+            🪪
+          </span>
+
+          <h3>
+            Driver requirements
+          </h3>
+
+          <p>
+            Confirm the provider’s minimum age, driver’s license, and
+            identification requirements.
+          </p>
+
+        </article>
+
+        <article>
+
+          <span>
+            💳
+          </span>
+
+          <h3>
+            Payment and deposit
+          </h3>
+
+          <p>
+            Many rental counters require a payment card and may place a
+            temporary security hold.
+          </p>
+
+        </article>
+
+        <article>
+
+          <span>
+            ⛽
+          </span>
+
+          <h3>
+            Fuel policy
+          </h3>
+
+          <p>
+            Review whether the vehicle must be returned with a full tank or
+            under another fuel arrangement.
+          </p>
+
+        </article>
+
+        <article>
+
+          <span>
+            🛡️
+          </span>
+
+          <h3>
+            Insurance options
+          </h3>
+
+          <p>
+            Review available protection, your personal coverage, and applicable
+            credit-card benefits.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         PARTNER DISCLOSURE
+    ====================================================== -->
+
+    <section class="premium-car-partner-section">
+
+      <div class="premium-car-partner-icon">
+        🤝
+      </div>
+
+      <div>
+
+        <span>
+          Rental-car search partner
+        </span>
+
+        <h2>
+          Search available rental vehicles through our travel partner
+        </h2>
+
+        <p>
+          Sunday Travel Deals helps begin your search. Vehicle availability,
+          prices, taxes, fees, deposits, insurance, payments, modifications,
+          cancellations, and customer support are controlled by the selected
+          rental provider.
+        </p>
+
+      </div>
+
+      <a href="#car-search">
+        Find a Car
+      </a>
+
+    </section>
+
+    <!-- =====================================================
+         SUPPORT BAR
+    ====================================================== -->
+
+    <section class="premium-car-support">
+
+      <span>
+        Need help navigating Sunday Travel Deals?
+      </span>
+
+      <a href="contact.html">
+        Visit our contact page
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <h2>
+          ✈️ Sunday Travel Deals
+        </h2>
+
+        <p>
+          Search hotels, flights, rental cars, tours, cruises, and travel
+          experiences from one convenient website.
+        </p>
+
+        <p class="footer-affiliate-note">
+          Sunday Travel Deals may receive a commission when visitors use
+          selected partner links. Prices, availability, payments,
+          reservations, changes, cancellations, and customer service are
+          controlled by the travel provider.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>
+          Travel
+        </h3>
+
+        <a href="hotels.html">
+          Hotels
+        </a>
+
+        <a href="flights.html">
+          Flights
+        </a>
+
+        <a href="cars.html">
+          Cars
+        </a>
+
+        <a href="tours.html">
+          Tours
+        </a>
+
+        <a href="cruises.html">
+          Cruises
+        </a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>
+          Company
+        </h3>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="privacy.html">
+          Privacy
+        </a>
+
+        <a href="terms.html">
+          Terms
+        </a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>
+          Follow
+        </h3>
+
+        <a href="#">
+          Facebook
+        </a>
+
+        <a href="#">
+          Instagram
+        </a>
+
+        <a href="#">
+          YouTube
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Sunday Travel Deals. All rights reserved.
+    </div>
+
+  </footer>
+
+  <!-- =====================================================
+       LOGIN / SIGNUP MODAL
+  ====================================================== -->
+
+  <div
+    id="loginModal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="carLoginTitle"
+  >
+
+    <div class="modal-content">
+
+      <button
+        type="button"
+        class="close"
+        onclick="closeModal()"
+        aria-label="Close login window"
+      >
+        &times;
+      </button>
+
+      <h2 id="carLoginTitle">
+        Welcome to Sunday Travel Deals
+      </h2>
+
+      <div class="modal-tabs">
+
+        <button
+          type="button"
+          id="tab-login"
+          class="active"
+          onclick="switchModalTab('login')"
+        >
+          Log In
+        </button>
+
+        <button
+          type="button"
+          id="tab-signup"
+          onclick="switchModalTab('signup')"
+        >
+          Sign Up
+        </button>
+
+      </div>
+
+      <!-- Login form -->
+      <form
+        id="modal-login-form"
+        onsubmit="event.preventDefault(); handleLogin();"
+      >
+
+        <label for="loginEmail">
+          Email
+        </label>
+
+        <input
+          type="email"
+          id="loginEmail"
+          placeholder="you@example.com"
+          required
+        />
+
+        <label for="loginPassword">
+          Password
+        </label>
+
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Enter your password"
+          required
+        />
+
+        <p
+          id="loginError"
+          class="form-error"
+        ></p>
+
+        <button type="submit">
+          Log In
+        </button>
+
+      </form>
+
+      <!-- Signup form -->
+      <form
+        id="modal-signup-form"
+        style="display: none;"
+        onsubmit="event.preventDefault(); handleSignup();"
+      >
+
+        <label for="signupName">
+          Full name
+        </label>
+
+        <input
+          type="text"
+          id="signupName"
+          placeholder="Your full name"
+          required
+        />
+
+        <label for="signupEmail">
+          Email
+        </label>
+
+        <input
+          type="email"
+          id="signupEmail"
+          placeholder="you@example.com"
+          required
+        />
+
+        <label for="signupPassword">
+          Password
+        </label>
+
+        <input
+          type="password"
+          id="signupPassword"
+          placeholder="At least 6 characters"
+          minlength="6"
+          required
+        />
+
+        <p id="signupError" class="form-error"></p>
+
+        <button type="submit">
+          Create Account
+        </button>
+
+      </form>
+
     </div>
 
   </div>
-</section>
 
-<section class="why-travelpayouts">
-  <div class="why-grid">
-    <div class="why-card">
-      <span>🚗</span>
-      <h3>900+ Suppliers</h3>
-      <p>Compare rental prices from major brands and local companies worldwide.</p>
-    </div>
-    <div class="why-card">
-      <span>💰</span>
-      <h3>No Hidden Fees</h3>
-      <p>See the full price upfront — taxes, insurance options, and extras included.</p>
-    </div>
-    <div class="why-card">
-      <span>🛵</span>
-      <h3>Cars, Vans & More</h3>
-      <p>From economy cars to SUVs, minivans, and luxury vehicles for every trip.</p>
-    </div>
-  </div>
-</section>
+  <script src="script.js"></script>
 
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <h2>✈️ Sunday Travel Deals</h2>
-      <p>Discover travel deals and unforgettable experiences.</p>
-      <p class="footer-affiliate-note">This site contains affiliate links. We may earn a commission when you book through our links at no extra cost to you.</p>
-    </div>
-    <div class="footer-links">
-      <h3>Explore</h3>
-      <a href="index.html">Home</a>
-      <a href="hotels.html">Hotels</a>
-      <a href="flights.html">Flights</a>
-      <a href="cars.html">Cars</a>
-      <a href="tours.html">Tours</a>
-      <a href="cruises.html">Cruises</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy</a>
-    </div>
-    <div class="footer-links">
-      <h3>Support</h3>
-      <a href="#">Help Center</a>
-      <a href="#">FAQ</a>
-      <a href="terms.html">Terms</a>
-    </div>
-    <div class="footer-links">
-      <h3>Connect</h3>
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">YouTube</a>
-    </div>
-  </div>
-  <div class="footer-bottom">© 2026 Sunday Travel Deals</div>
-</footer>
+  <script>
+    function chooseCarLocation(location) {
+      const pickupInput = document.getElementById("carPickup");
+      const searchCard = document.querySelector(".premium-car-search-card");
 
-<script src="script.js"></script>
+      pickupInput.value = location;
+
+      if (searchCard) {
+        searchCard.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      window.setTimeout(function () {
+        pickupInput.focus();
+      }, 400);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const pickupDateInput = document.getElementById("carPickupDate");
+      const returnDateInput = document.getElementById("carReturnDate");
+
+      if (!pickupDateInput || !returnDateInput) {
+        return;
+      }
+
+      function formatCarInputDate(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+      }
+
+      const today = new Date();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(today.getDate() + 1);
+      const dayAfter = new Date(today);
+      dayAfter.setDate(today.getDate() + 2);
+
+      pickupDateInput.min = formatCarInputDate(today);
+      returnDateInput.min = formatCarInputDate(tomorrow);
+
+      if (!pickupDateInput.value) {
+        pickupDateInput.value = formatCarInputDate(tomorrow);
+      }
+
+      if (!returnDateInput.value) {
+        returnDateInput.value = formatCarInputDate(dayAfter);
+      }
+
+      pickupDateInput.addEventListener("change", function () {
+        if (!pickupDateInput.value) {
+          return;
+        }
+
+        const selectedPickup = new Date(pickupDateInput.value + "T00:00:00");
+        selectedPickup.setDate(selectedPickup.getDate() + 1);
+        const minimumReturn = formatCarInputDate(selectedPickup);
+
+        returnDateInput.min = minimumReturn;
+
+        if (!returnDateInput.value || returnDateInput.value <= pickupDateInput.value) {
+          returnDateInput.value = minimumReturn;
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>

@@ -2,147 +2,1272 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flights | Sunday Travel Deals</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Search and compare domestic and international flights with Sunday Travel Deals."
+  />
+
+  <title>Search Flights | Sunday Travel Deals</title>
+
   <link rel="stylesheet" href="styles.css" />
-  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://emrldtp.cc/NTM5MTY2.js?t=539166';
-      document.head.appendChild(script);
-  })();
-  </script>
-  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-  (function () {
-        var script = document.createElement("script");
-        script.async = 1;
-        script.type = "module";
-        script.src = "https://tpwgts.com/wl_web/main.js?wl_id=18915";
-        document.head.appendChild(script);
-      })();
-</script>
+
+  <script
+    src="https://emrldtp.cc/NTM5MTY2.js?t=539166"
+    async
+  ></script>
 </head>
-<body>
 
-<header class="flights-hero">
-  <nav>
-    <div class="logo"><img src="logo.png" alt="Sunday Travel Deals"></div>
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="hotels.html">Hotels</a>
-      <a href="flights.html">Flights</a>
-      <a href="cars.html">Cars</a>
-      <a href="tours.html">Tours</a>
-      <a href="cruises.html">Cruises</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy</a>
-    </div>
-    <button type="button" class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
-  </nav>
+<body class="professional-flights-page">
 
-  <div class="flights-hero-content">
-    <h1>Search Cheap Flights</h1>
-    <p>Compare hundreds of airlines — powered by Travelpayouts.</p>
-  </div>
-</header>
+  <!-- =====================================================
+       FLIGHTS HERO
+  ====================================================== -->
 
-<section class="flights-widget-section">
-  <div class="flights-widget-box">
+  <header class="premium-flight-hero">
 
-    <!--
-      TRAVELPAYOUTS FLIGHT SEARCH WIDGET (Aviasales)
-      1. Log in to your Travelpayouts account at travelpayouts.com
-      2. Go to Tools → Widget Constructor
-      3. Choose Aviasales (flights), copy your embed code
-      4. Paste it below, replacing this comment block
-      OR: replace YOUR_MARKER in the script src below with your marker ID
-    -->
-    <!--
-      Once you have your Travelpayouts marker, replace YOUR_MARKER below
-      and delete the fallback form. Until then the form below works via Aviasales.
-    -->
-    <script
-      src="https://c.travelpayouts.com/widgetbox?type=search_form&popup=false&locale=en&color_button=%23ff4d79&color_icons=%23ff4d79&secondary=economy&powered_by=true&target_host=www.aviasales.com&uuid=YOUR_MARKER"
-      charset="utf-8">
-    </script>
+    <nav>
 
-    <!-- Fallback flight search — works immediately via Aviasales -->
-    <div class="fallback-search">
-      <h3>Search Flights</h3>
-      <div class="flight-search-form">
-        <input type="text" id="fFrom"   placeholder="From (city or airport)" />
-        <input type="text" id="fTo"     placeholder="To (city or airport)" />
-        <input type="date" id="fDepart" title="Departure date" />
-        <input type="date" id="fReturn" title="Return date (leave blank for one-way)" />
-        <select id="fPax" title="Passengers">
-          <option value="1">1 Passenger</option>
-          <option value="2">2 Passengers</option>
-          <option value="3">3 Passengers</option>
-          <option value="4">4 Passengers</option>
-        </select>
-        <button type="button" onclick="searchFlightsPage()">Search Flights</button>
+      <a href="index.html" class="logo" aria-label="Sunday Travel Deals home">
+        <img
+          src="assets/logo.png"
+          alt="Sunday Travel Deals"
+        />
+      </a>
+
+      <div class="menu">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="hotels.html">
+          Hotels
+        </a>
+
+        <a href="flights.html" class="active">
+          Flights
+        </a>
+
+        <a href="cars.html">
+          Cars
+        </a>
+
+        <a href="tours.html">
+          Tours
+        </a>
+
+        <a href="cruises.html">
+          Cruises
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <button
+          type="button"
+          onclick="openModal()"
+        >
+          Login / Sign Up
+        </button>
+
       </div>
-    </div>
 
-  </div>
-</section>
+      <button
+        type="button"
+        class="hamburger"
+        id="hamburger"
+        onclick="toggleMenu()"
+        aria-label="Open navigation menu"
+      >
+        &#9776;
+      </button>
 
-<section class="why-travelpayouts">
-  <div class="why-grid">
-    <div class="why-card">
-      <span>✈️</span>
-      <h3>750+ Airlines</h3>
-      <p>Compare prices across hundreds of carriers worldwide in seconds.</p>
-    </div>
-    <div class="why-card">
-      <span>💰</span>
-      <h3>Best Price Guarantee</h3>
-      <p>Travelpayouts searches dozens of booking sites to find the lowest fare.</p>
-    </div>
-    <div class="why-card">
-      <span>🔒</span>
-      <h3>Secure Booking</h3>
-      <p>Book directly with airlines and trusted partners — no middleman fees.</p>
-    </div>
-  </div>
-</section>
+    </nav>
 
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <h2>✈️ Sunday Travel Deals</h2>
-      <p>Discover flight deals and unforgettable travel experiences.</p>
-      <p class="footer-affiliate-note">
-        This site contains affiliate links. We may earn a commission when you book through our links at no extra cost to you.
+    <div class="premium-flight-hero-overlay"></div>
+
+    <div class="premium-flight-hero-content">
+
+      <span class="premium-flight-eyebrow">
+        Search domestic and international airfare
+      </span>
+
+      <h1>
+        Find the right flight for your next journey
+      </h1>
+
+      <p>
+        Enter your route and travel dates to search available airfare through
+        Aviasales and Sunday Travel Deals’ travel partner network.
       </p>
-    </div>
-    <div class="footer-links">
-      <h3>Explore</h3>
-      <a href="index.html">Home</a>
-      <a href="hotels.html">Hotels</a>
-      <a href="flights.html">Flights</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy</a>
-    </div>
-    <div class="footer-links">
-      <h3>Support</h3>
-      <a href="#">Help Center</a>
-      <a href="#">FAQ</a>
-      <a href="terms.html">Terms</a>
-    </div>
-    <div class="footer-links">
-      <h3>Connect</h3>
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">YouTube</a>
-    </div>
-  </div>
-  <div class="footer-bottom">© 2026 Sunday Travel Deals</div>
-</footer>
 
-<script src="script.js"></script>
+      <div class="premium-flight-search-card">
+
+        <div class="premium-flight-card-heading">
+
+          <div class="premium-flight-card-icon">
+            ✈️
+          </div>
+
+          <div>
+            <span>
+              Flight search
+            </span>
+
+            <h2>
+              Where would you like to go?
+            </h2>
+          </div>
+
+        </div>
+
+        <form
+          class="premium-flight-search-form"
+          onsubmit="event.preventDefault(); searchFlightsPage();"
+        >
+
+          <div class="premium-flight-field premium-flight-route-field">
+
+            <label for="fFrom">
+              Flying from
+            </label>
+
+            <div class="premium-flight-input-wrap">
+
+              <span class="premium-flight-input-icon">
+                🛫
+              </span>
+
+              <input
+                type="text"
+                id="fFrom"
+                placeholder="City or airport"
+                autocomplete="off"
+                required
+              />
+
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            class="premium-flight-swap"
+            onclick="swapFlightLocations()"
+            aria-label="Swap departure and destination"
+            title="Swap departure and destination"
+          >
+            ⇄
+          </button>
+
+          <div class="premium-flight-field premium-flight-route-field">
+
+            <label for="fTo">
+              Flying to
+            </label>
+
+            <div class="premium-flight-input-wrap">
+
+              <span class="premium-flight-input-icon">
+                🛬
+              </span>
+
+              <input
+                type="text"
+                id="fTo"
+                placeholder="City or airport"
+                autocomplete="off"
+                required
+              />
+
+            </div>
+
+          </div>
+
+          <div class="premium-flight-field">
+
+            <label for="fDepart">
+              Departure
+            </label>
+
+            <div class="premium-flight-input-wrap">
+
+              <span class="premium-flight-input-icon">
+                📅
+              </span>
+
+              <input
+                type="date"
+                id="fDepart"
+                required
+              />
+
+            </div>
+
+          </div>
+
+          <div class="premium-flight-field">
+
+            <label for="fReturn">
+              Return
+            </label>
+
+            <div class="premium-flight-input-wrap">
+
+              <span class="premium-flight-input-icon">
+                📅
+              </span>
+
+              <input
+                type="date"
+                id="fReturn"
+              />
+
+            </div>
+
+          </div>
+
+          <div class="premium-flight-field">
+
+            <label for="fPax">
+              Travelers
+            </label>
+
+            <div class="premium-flight-input-wrap">
+
+              <span class="premium-flight-input-icon">
+                👤
+              </span>
+
+              <select
+                id="fPax"
+                aria-label="Number of travelers"
+              >
+
+                <option value="1" selected>
+                  1 Traveler
+                </option>
+
+                <option value="2">
+                  2 Travelers
+                </option>
+
+                <option value="3">
+                  3 Travelers
+                </option>
+
+                <option value="4">
+                  4 Travelers
+                </option>
+
+                <option value="5">
+                  5 Travelers
+                </option>
+
+                <option value="6">
+                  6 Travelers
+                </option>
+
+                <option value="7">
+                  7 Travelers
+                </option>
+
+                <option value="8">
+                  8 Travelers
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+          <div class="premium-flight-search-button-group">
+
+            <button
+              type="submit"
+              class="premium-flight-search-button"
+            >
+              <span>
+                🔎
+              </span>
+
+              Search on Aviasales
+            </button>
+
+            <button
+              type="button"
+              class="premium-flight-search-button premium-flight-search-button-alt"
+              onclick="searchFlightsPage('booking')"
+            >
+              <span>
+                🔎
+              </span>
+
+              Search on Booking.com Flights
+            </button>
+
+          </div>
+
+        </form>
+
+        <div class="premium-flight-search-footer">
+
+          <span>
+            ✓ Worldwide routes
+          </span>
+
+          <span>
+            ✓ Trusted flight-search partner
+          </span>
+
+          <span>
+            ✓ Secure partner checkout
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         BENEFIT STRIP
+    ====================================================== -->
+
+    <section class="premium-flight-benefits">
+
+      <article>
+
+        <span class="premium-flight-benefit-icon">
+          🌍
+        </span>
+
+        <div>
+          <h3>
+            Worldwide destinations
+          </h3>
+
+          <p>
+            Search domestic and international routes from major cities and
+            airports.
+          </p>
+        </div>
+
+      </article>
+
+      <article>
+
+        <span class="premium-flight-benefit-icon">
+          💳
+        </span>
+
+        <div>
+          <h3>
+            Partner-managed booking
+          </h3>
+
+          <p>
+            Complete payments and reservations securely with the selected
+            provider.
+          </p>
+        </div>
+
+      </article>
+
+      <article>
+
+        <span class="premium-flight-benefit-icon">
+          ⚡
+        </span>
+
+        <div>
+          <h3>
+            Fast flight search
+          </h3>
+
+          <p>
+            Enter your route once and continue directly to available airfare.
+          </p>
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- =====================================================
+         POPULAR FLIGHT ROUTES
+    ====================================================== -->
+
+    <section class="premium-flight-routes-section">
+
+      <div class="premium-flight-section-heading">
+
+        <span>
+          Popular routes
+        </span>
+
+        <h2>
+          Start with a traveler-favorite destination
+        </h2>
+
+        <p>
+          Choose a popular route below, then adjust the departure city, dates,
+          and number of travelers.
+        </p>
+
+      </div>
+
+      <div class="premium-flight-routes-grid">
+
+        <article class="premium-flight-route-card">
+
+          <div class="premium-flight-route-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1000&q=85"
+              alt="New York City skyline"
+            />
+
+            <span>
+              City escape
+            </span>
+
+          </div>
+
+          <div class="premium-flight-route-content">
+
+            <div>
+              <small>
+                Fly to
+              </small>
+
+              <h3>
+                New York City
+              </h3>
+            </div>
+
+            <button
+              type="button"
+              onclick="chooseFlightDestination('New York City')"
+            >
+              Search →
+            </button>
+
+          </div>
+
+        </article>
+
+        <article class="premium-flight-route-card">
+
+          <div class="premium-flight-route-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85"
+              alt="Tropical beach in Hawaii"
+            />
+
+            <span>
+              Island getaway
+            </span>
+
+          </div>
+
+          <div class="premium-flight-route-content">
+
+            <div>
+              <small>
+                Fly to
+              </small>
+
+              <h3>
+                Honolulu
+              </h3>
+            </div>
+
+            <button
+              type="button"
+              onclick="chooseFlightDestination('Honolulu')"
+            >
+              Search →
+            </button>
+
+          </div>
+
+        </article>
+
+        <article class="premium-flight-route-card">
+
+          <div class="premium-flight-route-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1000&q=85"
+              alt="Tokyo city lights"
+            />
+
+            <span>
+              International adventure
+            </span>
+
+          </div>
+
+          <div class="premium-flight-route-content">
+
+            <div>
+              <small>
+                Fly to
+              </small>
+
+              <h3>
+                Tokyo
+              </h3>
+            </div>
+
+            <button
+              type="button"
+              onclick="chooseFlightDestination('Tokyo')"
+            >
+              Search →
+            </button>
+
+          </div>
+
+        </article>
+
+        <article class="premium-flight-route-card">
+
+          <div class="premium-flight-route-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=85"
+              alt="Paris and the Eiffel Tower"
+            />
+
+            <span>
+              Romantic getaway
+            </span>
+
+          </div>
+
+          <div class="premium-flight-route-content">
+
+            <div>
+              <small>
+                Fly to
+              </small>
+
+              <h3>
+                Paris
+              </h3>
+            </div>
+
+            <button
+              type="button"
+              onclick="chooseFlightDestination('Paris')"
+            >
+              Search →
+            </button>
+
+          </div>
+
+        </article>
+
+        <article class="premium-flight-route-card">
+
+          <div class="premium-flight-route-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1000&q=85"
+              alt="Las Vegas skyline"
+            />
+
+            <span>
+              Entertainment
+            </span>
+
+          </div>
+
+          <div class="premium-flight-route-content">
+
+            <div>
+              <small>
+                Fly to
+              </small>
+
+              <h3>
+                Las Vegas
+              </h3>
+            </div>
+
+            <button
+              type="button"
+              onclick="chooseFlightDestination('Las Vegas')"
+            >
+              Search →
+            </button>
+
+          </div>
+
+        </article>
+
+        <article class="premium-flight-route-card">
+
+          <div class="premium-flight-route-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1000&q=85"
+              alt="Dubai skyline"
+            />
+
+            <span>
+              Luxury travel
+            </span>
+
+          </div>
+
+          <div class="premium-flight-route-content">
+
+            <div>
+              <small>
+                Fly to
+              </small>
+
+              <h3>
+                Dubai
+              </h3>
+            </div>
+
+            <button
+              type="button"
+              onclick="chooseFlightDestination('Dubai')"
+            >
+              Search →
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         TRAVEL PLANNING PROMO
+    ====================================================== -->
+
+    <section class="premium-flight-planning-section">
+
+      <div class="premium-flight-planning-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=90"
+          alt="Airplane flying above clouds"
+        />
+
+        <div class="premium-flight-floating-card">
+
+          <span>
+            ✈️
+          </span>
+
+          <div>
+            <strong>
+              Flights made simpler
+            </strong>
+
+            <small>
+              Search, compare, and continue securely
+            </small>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="premium-flight-planning-content">
+
+        <span class="premium-flight-section-label">
+          How it works
+        </span>
+
+        <h2>
+          Search your route in three simple steps
+        </h2>
+
+        <p>
+          Sunday Travel Deals connects you to a travel partner that provides
+          current flight options and manages the final reservation.
+        </p>
+
+        <div class="premium-flight-step-list">
+
+          <article>
+
+            <span>
+              1
+            </span>
+
+            <div>
+              <h3>
+                Enter your airports or cities
+              </h3>
+
+              <p>
+                Add your departure location and destination.
+              </p>
+            </div>
+
+          </article>
+
+          <article>
+
+            <span>
+              2
+            </span>
+
+            <div>
+              <h3>
+                Select your travel dates
+              </h3>
+
+              <p>
+                Choose a departure date and an optional return date.
+              </p>
+            </div>
+
+          </article>
+
+          <article>
+
+            <span>
+              3
+            </span>
+
+            <div>
+              <h3>
+                Continue to available flights
+              </h3>
+
+              <p>
+                Review the current options and complete the booking with the
+                provider.
+              </p>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         TRAVEL TIPS
+    ====================================================== -->
+
+    <section class="premium-flight-tips-section">
+
+      <div class="premium-flight-section-heading">
+
+        <span>
+          Before you book
+        </span>
+
+        <h2>
+          Helpful flight-planning reminders
+        </h2>
+
+        <p>
+          Review the provider’s fare terms carefully before completing your
+          reservation.
+        </p>
+
+      </div>
+
+      <div class="premium-flight-tips-grid">
+
+        <article>
+
+          <span>
+            🧳
+          </span>
+
+          <h3>
+            Check baggage rules
+          </h3>
+
+          <p>
+            Carry-on and checked baggage allowances may differ by airline and
+            fare class.
+          </p>
+
+        </article>
+
+        <article>
+
+          <span>
+            🕐
+          </span>
+
+          <h3>
+            Confirm departure times
+          </h3>
+
+          <p>
+            Review the exact date, airport, terminal, and departure time before
+            payment.
+          </p>
+
+        </article>
+
+        <article>
+
+          <span>
+            🔄
+          </span>
+
+          <h3>
+            Review change policies
+          </h3>
+
+          <p>
+            Some lower-priced fares may have limited cancellation or
+            modification options.
+          </p>
+
+        </article>
+
+        <article>
+
+          <span>
+            🌐
+          </span>
+
+          <h3>
+            Check travel requirements
+          </h3>
+
+          <p>
+            International trips may require passports, visas, or additional
+            entry documentation.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         PARTNER DISCLOSURE
+    ====================================================== -->
+
+    <section class="premium-flight-partner-section">
+
+      <div class="premium-flight-partner-icon">
+        🤝
+      </div>
+
+      <div>
+
+        <span>
+          Flight-search partner
+        </span>
+
+        <h2>
+          Powered through Aviasales and Travelpayouts
+        </h2>
+
+        <p>
+          Sunday Travel Deals helps begin your search. Flight schedules,
+          prices, availability, baggage rules, payments, changes,
+          cancellations, and customer support are managed by the travel
+          provider.
+        </p>
+
+      </div>
+
+      <a href="#flight-search">
+        Search flights
+      </a>
+
+    </section>
+
+    <!-- =====================================================
+         SUPPORT BAR
+    ====================================================== -->
+
+    <section class="premium-flight-support">
+
+      <span>
+        Questions about Sunday Travel Deals?
+      </span>
+
+      <a href="contact.html">
+        Visit our contact page
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <h2>
+          ✈️ Sunday Travel Deals
+        </h2>
+
+        <p>
+          Search hotels, flights, rental cars, tours, cruises, and travel
+          experiences from one convenient website.
+        </p>
+
+        <p class="footer-affiliate-note">
+          Sunday Travel Deals may receive a commission when visitors use
+          selected partner links. Prices, availability, payments,
+          reservations, changes, cancellations, and customer service are
+          controlled by the travel provider.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>
+          Travel
+        </h3>
+
+        <a href="hotels.html">
+          Hotels
+        </a>
+
+        <a href="flights.html">
+          Flights
+        </a>
+
+        <a href="cars.html">
+          Cars
+        </a>
+
+        <a href="tours.html">
+          Tours
+        </a>
+
+        <a href="cruises.html">
+          Cruises
+        </a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>
+          Company
+        </h3>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="privacy.html">
+          Privacy
+        </a>
+
+        <a href="terms.html">
+          Terms
+        </a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>
+          Follow
+        </h3>
+
+        <a href="#">
+          Facebook
+        </a>
+
+        <a href="#">
+          Instagram
+        </a>
+
+        <a href="#">
+          YouTube
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Sunday Travel Deals. All rights reserved.
+    </div>
+
+  </footer>
+
+  <!-- =====================================================
+       LOGIN / SIGNUP MODAL
+  ====================================================== -->
+
+  <div
+    id="loginModal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="flightLoginTitle"
+  >
+
+    <div class="modal-content">
+
+      <button
+        type="button"
+        class="close"
+        onclick="closeModal()"
+        aria-label="Close login window"
+      >
+        &times;
+      </button>
+
+      <h2 id="flightLoginTitle">
+        Welcome to Sunday Travel Deals
+      </h2>
+
+      <div class="modal-tabs">
+
+        <button
+          type="button"
+          id="tab-login"
+          class="active"
+          onclick="switchModalTab('login')"
+        >
+          Log In
+        </button>
+
+        <button
+          type="button"
+          id="tab-signup"
+          onclick="switchModalTab('signup')"
+        >
+          Sign Up
+        </button>
+
+      </div>
+
+      <form
+        id="modal-login-form"
+        onsubmit="event.preventDefault(); handleLogin();"
+      >
+
+        <label for="loginEmail">
+          Email
+        </label>
+
+        <input
+          type="email"
+          id="loginEmail"
+          placeholder="you@example.com"
+          required
+        />
+
+        <label for="loginPassword">
+          Password
+        </label>
+
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Enter your password"
+          required
+        />
+
+        <p id="loginError" class="form-error"></p>
+
+        <button type="submit">
+          Log In
+        </button>
+
+      </form>
+
+      <form
+        id="modal-signup-form"
+        style="display: none;"
+        onsubmit="event.preventDefault(); handleSignup();"
+      >
+
+        <label for="signupName">
+          Full name
+        </label>
+
+        <input
+          type="text"
+          id="signupName"
+          placeholder="Your full name"
+          required
+        />
+
+        <label for="signupEmail">
+          Email
+        </label>
+
+        <input
+          type="email"
+          id="signupEmail"
+          placeholder="you@example.com"
+          required
+        />
+
+        <label for="signupPassword">
+          Password
+        </label>
+
+        <input
+          type="password"
+          id="signupPassword"
+          placeholder="At least 6 characters"
+          minlength="6"
+          required
+        />
+
+        <p id="signupError" class="form-error"></p>
+
+        <button type="submit">
+          Create Account
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    function formatFlightInputDate(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+
+      return `${year}-${month}-${day}`;
+    }
+
+    function swapFlightLocations() {
+      const departureInput = document.getElementById("fFrom");
+      const destinationInput = document.getElementById("fTo");
+
+      const departureValue = departureInput.value;
+
+      departureInput.value = destinationInput.value;
+      destinationInput.value = departureValue;
+
+      departureInput.focus();
+    }
+
+    function chooseFlightDestination(destination) {
+      const destinationInput = document.getElementById("fTo");
+      const searchCard = document.querySelector(
+        ".premium-flight-search-card"
+      );
+
+      destinationInput.value = destination;
+
+      searchCard.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      window.setTimeout(function () {
+        destinationInput.focus();
+      }, 500);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const departureDate = document.getElementById("fDepart");
+      const returnDate = document.getElementById("fReturn");
+      const searchCard = document.querySelector(
+        ".premium-flight-search-card"
+      );
+
+      if (searchCard) {
+        searchCard.id = "flight-search";
+      }
+
+      const today = new Date();
+      const tomorrow = new Date(today);
+      const nextWeek = new Date(today);
+
+      tomorrow.setDate(today.getDate() + 1);
+      nextWeek.setDate(today.getDate() + 8);
+
+      departureDate.min = formatFlightInputDate(today);
+      returnDate.min = formatFlightInputDate(tomorrow);
+
+      if (!departureDate.value) {
+        departureDate.value = formatFlightInputDate(tomorrow);
+      }
+
+      if (!returnDate.value) {
+        returnDate.value = formatFlightInputDate(nextWeek);
+      }
+
+      departureDate.addEventListener("change", function () {
+        if (!departureDate.value) {
+          return;
+        }
+
+        const minimumReturnDate = new Date(
+          departureDate.value + "T00:00:00"
+        );
+
+        minimumReturnDate.setDate(
+          minimumReturnDate.getDate() + 1
+        );
+
+        const minimumReturnValue =
+          formatFlightInputDate(minimumReturnDate);
+
+        returnDate.min = minimumReturnValue;
+
+        if (
+          returnDate.value &&
+          returnDate.value <= departureDate.value
+        ) {
+          returnDate.value = minimumReturnValue;
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>

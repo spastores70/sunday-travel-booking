@@ -11,12 +11,8 @@
 
 <header class="hero"> 
   <div class="bg-video">
-    <iframe
-      src="https://www.youtube.com/embed/9HhiMCsh3-Y?autoplay=1&mute=1&loop=1&playlist=9HhiMCsh3-Y&controls=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1"
-      frameborder="0"
-      allow="autoplay; fullscreen"
-      title="Background video">
-    </iframe>
+    <div id="bgVideoPlayer"></div>
+    <img class="bg-video-poster" id="bgVideoPoster" src="https://img.youtube.com/vi/9HhiMCsh3-Y/maxresdefault.jpg" alt="" />
   </div>
 
   <div class="overlay"></div>
@@ -61,7 +57,10 @@
         <option value="3">3 Guests</option>
         <option value="4">4 Guests</option>
       </select>
-      <button type="button" onclick="searchHotels()">Search Hotels</button>
+      <div class="glass-search-btns">
+        <button type="button" onclick="searchHotels('klook')">Search on Klook</button>
+        <button type="button" onclick="searchHotels('booking')">Search on Booking.com</button>
+      </div>
     </div>
 
     <div class="glass-search glass-search--flights" id="flightSearch">
@@ -75,21 +74,73 @@
         <option value="3">3 Passengers</option>
         <option value="4">4 Passengers</option>
       </select>
-      <button type="button" onclick="searchFlights()">Search Flights</button>
+      <div class="glass-search-btns">
+        <button type="button" onclick="searchFlights('aviasales')">Search on Aviasales</button>
+        <button type="button" onclick="searchFlights('booking')">Search on Booking.com</button>
+      </div>
     </div>
   </div>
 </header>
 
 <!-- Category tiles -->
-<section class="categories">
-  <h2>Browse by Category</h2>
-  <p class="categories-lead">Everything you need for the perfect trip — all in one place.</p>
-  <div class="category-grid">
-    <a class="category-tile tile-hotels"  href="hotels.html"><span>🏨</span>Hotels</a>
-    <a class="category-tile tile-flights" href="flights.html"><span>✈️</span>Flights</a>
-    <a class="category-tile tile-cars"    href="cars.html"><span>🚗</span>Cars &amp; Bikes</a>
-    <a class="category-tile tile-tours"   href="tours.html"><span>🎭</span>Tours &amp; Activities</a>
-    <a class="category-tile tile-cruises" href="cruises.html"><span>🚢</span>Cruises</a>
+<section class="premium-categories-section">
+  <div class="premium-categories-heading">
+    <span>Where to next?</span>
+    <h2>Browse by category</h2>
+    <p>Everything you need for the perfect trip — all in one place.</p>
+  </div>
+  <div class="premium-categories-grid">
+
+    <a class="premium-category-card" href="hotels.html">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Hotel pool and resort" />
+      <span class="premium-category-overlay"></span>
+      <span class="premium-category-icon">🏨</span>
+      <span class="premium-category-body">
+        <strong>Hotels</strong>
+        <small>Stays worldwide</small>
+      </span>
+    </a>
+
+    <a class="premium-category-card" href="flights.html">
+      <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Airplane wing above the clouds" />
+      <span class="premium-category-overlay"></span>
+      <span class="premium-category-icon">✈️</span>
+      <span class="premium-category-body">
+        <strong>Flights</strong>
+        <small>Every route, every airline</small>
+      </span>
+    </a>
+
+    <a class="premium-category-card" href="cars.html">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Rental car ready for the road" />
+      <span class="premium-category-overlay"></span>
+      <span class="premium-category-icon">🚗</span>
+      <span class="premium-category-body">
+        <strong>Cars &amp; Bikes</strong>
+        <small>Airport &amp; city pickups</small>
+      </span>
+    </a>
+
+    <a class="premium-category-card" href="tours.html">
+      <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali temple and tropical scenery" />
+      <span class="premium-category-overlay"></span>
+      <span class="premium-category-icon">🎭</span>
+      <span class="premium-category-body">
+        <strong>Tours &amp; Activities</strong>
+        <small>300,000+ experiences</small>
+      </span>
+    </a>
+
+    <a class="premium-category-card" href="cruises.html">
+      <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=800&q=80" alt="Caribbean turquoise waters" />
+      <span class="premium-category-overlay"></span>
+      <span class="premium-category-icon">🚢</span>
+      <span class="premium-category-body">
+        <strong>Cruises</strong>
+        <small>All major cruise lines</small>
+      </span>
+    </a>
+
   </div>
 </section>
 
@@ -210,6 +261,50 @@
   </div>
   <div class="footer-bottom">© 2026 Sunday Travel Deals</div>
 </footer>
+
+<script>
+  (function () {
+    var poster = document.getElementById("bgVideoPoster");
+    var hidePoster = function () {
+      if (poster) {
+        poster.classList.add("is-hidden");
+      }
+    };
+
+    // Safety net: if the YouTube API is blocked or slow, don't leave the
+    // poster stuck up forever — just fall back to the old load-then-show behavior.
+    var fallbackTimer = window.setTimeout(hidePoster, 4000);
+
+    window.onYouTubeIframeAPIReady = function () {
+      new YT.Player("bgVideoPlayer", {
+        videoId: "9HhiMCsh3-Y",
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          loop: 1,
+          playlist: "9HhiMCsh3-Y",
+          controls: 0,
+          rel: 0,
+          iv_load_policy: 3,
+          modestbranding: 1,
+          playsinline: 1
+        },
+        events: {
+          onStateChange: function (event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+              window.clearTimeout(fallbackTimer);
+              hidePoster();
+            }
+          }
+        }
+      });
+    };
+
+    var apiScript = document.createElement("script");
+    apiScript.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(apiScript);
+  })();
+</script>
 
 </body>
 </html>

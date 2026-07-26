@@ -217,16 +217,32 @@
 
       </div>
 
-      <button
-        type="submit"
-        class="premium-hotel-search-btn"
-      >
-        <span>
-          🔎
-        </span>
+      <div class="premium-hotel-search-btn-group">
 
-        Search Stays
-      </button>
+        <button
+          type="submit"
+          class="premium-hotel-search-btn"
+        >
+          <span>
+            🔎
+          </span>
+
+          Search on Klook
+        </button>
+
+        <button
+          type="button"
+          class="premium-hotel-search-btn premium-hotel-search-btn-alt"
+          onclick="searchHotelsPage(event, 'booking')"
+        >
+          <span>
+            🔎
+          </span>
+
+          Search on Booking.com
+        </button>
+
+      </div>
 
     </form>
 

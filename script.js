@@ -211,14 +211,39 @@ function validateHotelSearch(destination, checkIn, checkOut) {
   return true;
 }
 
-/**
- * Homepage hotel search.
- */
-function searchHotels(event) {
-  if (event) {
-    event.preventDefault();
+// ── Hotels via Booking.com (CJ affiliate) ────────────────────────────────────
+// CJ deep-link: append the destination URL, URL-encoded, to `?url=` and CJ
+// redirects through the approved tracking link before landing on booking.com.
+var CJ_BOOKING_URL = 'https://www.kqzyfj.com/click-101807185-17288984?url=';
+
+function openBookingHotelSearch(destination, checkIn, checkOut, guests) {
+  var bookingUrl = new URL('https://www.booking.com/searchresults.html');
+
+  if (destination) {
+    bookingUrl.searchParams.set('ss', destination);
   }
 
+  if (checkIn) {
+    bookingUrl.searchParams.set('checkin', checkIn);
+  }
+
+  if (checkOut) {
+    bookingUrl.searchParams.set('checkout', checkOut);
+  }
+
+  if (guests) {
+    bookingUrl.searchParams.set('group_adults', guests);
+  }
+
+  var affiliateUrl = CJ_BOOKING_URL + encodeURIComponent(bookingUrl.toString());
+
+  window.open(affiliateUrl, '_blank', 'noopener,noreferrer');
+}
+
+/**
+ * Homepage hotel search. provider is 'klook' (default) or 'booking'.
+ */
+function searchHotels(provider) {
   var destinationInput = document.getElementById('hotelDest');
   var checkInInput = document.getElementById('checkIn');
   var checkOutInput = document.getElementById('checkOut');
@@ -243,18 +268,17 @@ function searchHotels(event) {
     return;
   }
 
-  openKlookHotelSearch(
-    destination,
-    checkIn,
-    checkOut,
-    guests
-  );
+  if (provider === 'booking') {
+    openBookingHotelSearch(destination, checkIn, checkOut, guests);
+  } else {
+    openKlookHotelSearch(destination, checkIn, checkOut, guests);
+  }
 }
 
 /**
- * Hotels page search.
+ * Hotels page search. provider is 'klook' (default) or 'booking'.
  */
-function searchHotelsPage(event) {
+function searchHotelsPage(event, provider) {
   if (event) {
     event.preventDefault();
   }
@@ -290,17 +314,19 @@ function searchHotelsPage(event) {
     return;
   }
 
-  if (status) {
-    status.textContent =
-      'Opening available accommodations through Klook...';
-  }
+  if (provider === 'booking') {
+    if (status) {
+      status.textContent = 'Opening available accommodations through Booking.com...';
+    }
 
-  openKlookHotelSearch(
-    destination,
-    checkIn,
-    checkOut,
-    guests
-  );
+    openBookingHotelSearch(destination, checkIn, checkOut, guests);
+  } else {
+    if (status) {
+      status.textContent = 'Opening available accommodations through Klook...';
+    }
+
+    openKlookHotelSearch(destination, checkIn, checkOut, guests);
+  }
 }
 /**
  * Fills the hotel search with a featured destination
@@ -389,10 +415,27 @@ function formatHotelDate(date) {
   return year + '-' + month + '-' + day;
 }
 
-// ── Flight search → Aviasales via Travelpayouts affiliate link ───────────────
+// ── Flight search → Aviasales via Travelpayouts, or Booking.com Flights via CJ
 var TP_FLIGHT_BASE = 'https://tp.media/r?campaign_id=100&marker=738364&p=4114&trs=539166&u=';
 
-function searchFlights() {
+// Booking.com Flights uses free-text city/airport names here since this form
+// has no IATA code lookup; treat params as best-effort, same as Aviasales above.
+function openBookingFlightSearch(from, to, depart, returnDate, pax) {
+  var bookingFlightUrl = new URL('https://www.booking.com/flights/index.html');
+
+  bookingFlightUrl.searchParams.set('type', returnDate ? 'ROUNDTRIP' : 'ONEWAY');
+  if (from)       bookingFlightUrl.searchParams.set('from', from);
+  if (to)         bookingFlightUrl.searchParams.set('to', to);
+  if (depart)     bookingFlightUrl.searchParams.set('depart', depart);
+  if (returnDate) bookingFlightUrl.searchParams.set('return', returnDate);
+  if (pax)        bookingFlightUrl.searchParams.set('adults', pax);
+
+  var affiliateUrl = CJ_BOOKING_URL + encodeURIComponent(bookingFlightUrl.toString());
+
+  window.open(affiliateUrl, '_blank', 'noopener,noreferrer');
+}
+
+function searchFlights(provider) {
   var from       = document.getElementById('flightFrom').value.trim();
   var to         = document.getElementById('flightTo').value.trim();
   var depart     = document.getElementById('departDate').value;
@@ -401,6 +444,11 @@ function searchFlights() {
 
   if (!from || !to) { alert('Please enter origin and destination.'); return; }
 
+  if (provider === 'booking') {
+    openBookingFlightSearch(from, to, depart, returnDate, pax);
+    return;
+  }
+
   var aviasalesParams = new URLSearchParams({ origin: from, destination: to, adults: pax });
   if (depart)     aviasalesParams.set('depart_date', depart);
   if (returnDate) aviasalesParams.set('return_date', returnDate);
@@ -408,7 +456,7 @@ function searchFlights() {
   window.open(TP_FLIGHT_BASE + encodeURIComponent('https://aviasales.com/search?' + aviasalesParams.toString()), '_blank');
 }
 
-function searchFlightsPage() {
+function searchFlightsPage(provider) {
   var from       = document.getElementById('fFrom').value.trim();
   var to         = document.getElementById('fTo').value.trim();
   var depart     = document.getElementById('fDepart').value;
@@ -416,6 +464,11 @@ function searchFlightsPage() {
   var pax        = document.getElementById('fPax').value;
 
   if (!from || !to) { alert('Please enter origin and destination.'); return; }
+
+  if (provider === 'booking') {
+    openBookingFlightSearch(from, to, depart, returnDate, pax);
+    return;
+  }
 
   var aviasalesParams = new URLSearchParams({ origin: from, destination: to, adults: pax });
   if (depart)     aviasalesParams.set('depart_date', depart);
@@ -476,34 +529,4 @@ function searchCruises() {
 function sendMessage(event) {
   event.preventDefault();
   document.getElementById('formStatus').textContent = 'Thank you! Your message has been received.';
-}function searchHotels() {
-  const destination = document.getElementById("hotelDest").value.trim();
-  const checkIn = document.getElementById("checkIn").value;
-  const checkOut = document.getElementById("checkOut").value;
-  const guests = document.getElementById("guests").value;
-
-  if (!destination) {
-    alert("Please enter a destination.");
-    document.getElementById("hotelDest").focus();
-    return;
-  }
-
-  if (!checkIn || !checkOut) {
-    alert("Please select your check-in and check-out dates.");
-    return;
-  }
-
-  if (new Date(checkOut) <= new Date(checkIn)) {
-    alert("Check-out must be later than check-in.");
-    return;
-  }
-
-  const params = new URLSearchParams({
-    destination,
-    checkIn,
-    checkOut,
-    guests
-  });
-
-  window.location.href = `hotels.html?${params.toString()}`;
 }
