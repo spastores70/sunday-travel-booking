@@ -6845,4 +6845,89 @@ html {
   .hero-categories-grid .premium-category-body strong {
     font-size: 7px !important;
   }
+}/* =========================================================
+   MOBILE HERO IMPROVEMENTS
+   Logo + Category Position
+========================================================= */
+
+@media screen and (max-width:768px){
+
+    /* Make the hero taller so the background is visible */
+    .hero{
+        min-height:100vh !important;
+        display:flex;
+        flex-direction:column;
+    }
+
+    /* Keep hero content near the top */
+    .hero-content{
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        height:100%;
+        padding-top:95px !important;
+        padding-bottom:20px !important;
+    }
+
+    /* Move the categories to the bottom of the hero */
+    .hero-categories-grid{
+        margin-top:auto !important;
+        margin-bottom:18px !important;
+    }
+
+    /* Increase the logo by approximately 150% */
+    .logo img{
+        width:210px !important;
+        height:auto !important;
+        max-width:none !important;
+    }
+
+    /* Slightly reduce menu height */
+    nav{
+        padding-top:14px !important;
+        padding-bottom:14px !important;
+    }
+
+}/* =========================================================
+   MOBILE HERO POSITION FIX
+========================================================= */
+
+@media screen and (max-width:768px){
+
+    /* Keep the hero full screen */
+    .hero{
+        min-height:100vh !important;
+        display:flex;
+        flex-direction:column;
+    }
+
+    /* Hero content fills the hero */
+    .hero-content{
+        display:flex !important;
+        flex-direction:column !important;
+        height:calc(100vh - 90px) !important;
+    }
+
+    /* Push ONLY the categories to the bottom */
+    .hero-categories-grid{
+        margin-top:auto !important;
+        margin-bottom:20px !important;
+    }
+
+    /* Make the logo approximately 150% larger */
+   @media screen and (max-width:768px){
+
+    .logo{
+        flex:0 0 auto;
+    }
+
+    .logo img{
+        width:210px !important;
+        max-width:210px !important;
+        min-width:210px !important;
+        height:auto !important;
+    }
+
+}
+
 }
