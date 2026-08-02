@@ -6752,4 +6752,97 @@ html {
   .premium-cruise-location-content strong {
     font-size: 21px;
   }
+}/* =========================================================
+   FINAL MOBILE CATEGORY FIX
+   Same card design — five smaller cards in one row
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .hero-categories-grid.premium-categories-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 12px auto 0 !important;
+  }
+
+  .hero-categories-grid .premium-category-card {
+    position: relative !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    min-height: 76px !important;
+    height: 76px !important;
+    padding: 5px 2px !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+  }
+
+  .hero-categories-grid .premium-category-card img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .hero-categories-grid .premium-category-icon {
+    position: relative !important;
+    z-index: 3 !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin: 0 auto 3px !important;
+    font-size: 15px !important;
+    line-height: 24px !important;
+  }
+
+  .hero-categories-grid .premium-category-body {
+    position: relative !important;
+    z-index: 3 !important;
+    padding: 0 1px !important;
+    text-align: center !important;
+  }
+
+  .hero-categories-grid .premium-category-body strong {
+    display: block !important;
+    font-size: 8px !important;
+    line-height: 1.05 !important;
+    white-space: normal !important;
+  }
+
+  .hero-categories-grid .premium-category-body small {
+    display: none !important;
+  }
+
+  .hero-content {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+/* Prevent the original two-column rule from returning on small phones */
+@media screen and (max-width: 420px) {
+
+  .hero-categories-grid.premium-categories-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 3px !important;
+  }
+
+  .hero-categories-grid .premium-category-card {
+    min-height: 68px !important;
+    height: 68px !important;
+    border-radius: 8px !important;
+  }
+
+  .hero-categories-grid .premium-category-icon {
+    width: 21px !important;
+    height: 21px !important;
+    font-size: 13px !important;
+    line-height: 21px !important;
+  }
+
+  .hero-categories-grid .premium-category-body strong {
+    font-size: 7px !important;
+  }
 }
